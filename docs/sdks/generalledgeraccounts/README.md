@@ -78,8 +78,8 @@ func main() {
     ctx := context.Background()
     res, err := s.GeneralLedgerAccounts.GetGeneralLedgerAccounts(ctx, operations.GetGeneralLedgerAccountsRequest{
         ResourceParameter: &shared.ResourceParametersInput{
-            Fields: mycompanysamplesdk.String("deposit"),
-            OrderBy: mycompanysamplesdk.String("ugh"),
+            Fields: mycompanysamplesdk.String("string"),
+            OrderBy: mycompanysamplesdk.String("string"),
             PageNumber: mycompanysamplesdk.Int(2),
             PageSize: mycompanysamplesdk.Int(5000),
         },

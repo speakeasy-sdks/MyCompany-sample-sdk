@@ -31,8 +31,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Currencies.GetCurrencies(ctx, operations.GetCurrenciesRequest{
         ResourceParameter: &shared.ResourceParametersInput{
-            Fields: mycompanysamplesdk.String("teal"),
-            OrderBy: mycompanysamplesdk.String("management"),
+            Fields: mycompanysamplesdk.String("string"),
+            OrderBy: mycompanysamplesdk.String("string"),
             PageNumber: mycompanysamplesdk.Int(2),
             PageSize: mycompanysamplesdk.Int(5000),
         },

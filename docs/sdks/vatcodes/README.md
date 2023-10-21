@@ -30,8 +30,8 @@ func main() {
     ctx := context.Background()
     res, err := s.VatCodes.GetVatCodes(ctx, operations.GetVatCodesRequest{
         ResourceParameter: &shared.ResourceParametersInput{
-            Fields: mycompanysamplesdk.String("Gorgeous"),
-            OrderBy: mycompanysamplesdk.String("yellow"),
+            Fields: mycompanysamplesdk.String("string"),
+            OrderBy: mycompanysamplesdk.String("string"),
             PageNumber: mycompanysamplesdk.Int(2),
             PageSize: mycompanysamplesdk.Int(5000),
         },

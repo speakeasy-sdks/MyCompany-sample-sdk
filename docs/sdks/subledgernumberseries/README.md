@@ -30,8 +30,8 @@ func main() {
     ctx := context.Background()
     res, err := s.SubLedgerNumberSeries.GetSubLedgerNumberSeries(ctx, operations.GetSubLedgerNumberSeriesRequest{
         ResourceParameter: &shared.ResourceParametersInput{
-            Fields: mycompanysamplesdk.String("enhance"),
-            OrderBy: mycompanysamplesdk.String("MTF"),
+            Fields: mycompanysamplesdk.String("string"),
+            OrderBy: mycompanysamplesdk.String("string"),
             PageNumber: mycompanysamplesdk.Int(2),
             PageSize: mycompanysamplesdk.Int(5000),
         },
