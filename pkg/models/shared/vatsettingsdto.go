@@ -2,6 +2,7 @@
 
 package shared
 
+// VatSettingsDto - The Vat Settings DTO contains all properties relevant to VAT settings in
 type VatSettingsDto struct {
 	// Gets information on whether this this client is registered for Value Added Tax (VAT, norwegian: mva-registrert). If false, vat is not applied to outgoing invoices.
 	IsVatRegistered *bool `json:"IsVatRegistered,omitempty"`
@@ -11,9 +12,9 @@ type VatSettingsDto struct {
 	UseVatCompensation *bool `json:"UseVatCompensation,omitempty"`
 	// Gets the vat number of the client. The vat number will equal the organization number for norwegian clients, but will relevant in vat terms only if the property isVatRegistered is true.
 	VatNumber *string `json:"VatNumber,omitempty"`
-	// Enum defining the Value Added Tax (VAT) period on this client. The VAT period states how often VAT is reported to the government from this client.<p>Members:</p><ul><li><i>none</i> - No defined VAT period</li><li><i>weekly</i> - Every week</li><li><i>halfMonthly</i> - Half-Monthly</li><li><i>monthly</i> - Every month</li><li><i>biMonthly</i> - Every two months</li><li><i>yearly</i> - Once a year</li><li><i>halfYearly</i> - Twice a year</li><li><i>quarterly</i> - Four times a year</li></ul>
+	// Enum defining the Value Added Tax (VAT) period on this client. The VAT period states how often VAT is reported to the government from this client.<p>Members:</p><ul><li><i>weekly</i> - Every week</li><li><i>halfMonthly</i> - Half-Monthly</li><li><i>monthly</i> - Every month</li><li><i>biMonthly</i> - Every two months</li><li><i>yearly</i> - Once a year</li><li><i>halfYearly</i> - Twice a year</li><li><i>quarterly</i> - Four times a year</li></ul>
 	VatPeriod *VatPeriodType `json:"VatPeriod,omitempty"`
-	// Maps to VatReturnCategory<p>Members:</p><ul><li><i>generalIndustry</i> - Alminnelig næring</li><li><i>primaryIndustry</i> - Primærnmæring</li><li><i>vatFeeCompensation</i> - Merverdiavgiftskompensasjon</li><li><i>reverseVatObligation</i> - Omvendt avgiftsplikt</li><li><i>noReporting</i> - Ingen rapportering</li></ul>
+	// The type of VAT returns the client should deliver for it's principal activity.<p>Members:</p><ul><li><i>generalIndustry</i> - General Industry (Norwegian: Alminnelig næring)</li><li><i>primaryIndustry</i> - Primary Industry (Norwegian: Primærnmæring)</li><li><i>vatCompensation</i> - Vat Compensation (Norwegian: Merverdiavgiftskompensasjon)ø</li><li><i>reverseVatLiability</i> - Reverse VAT Liability (Norwegian: Omvendt avgiftsplikt)</li><li><i>noReporting</i> - No reporting (Norwegian: Ingen rapportering)</li></ul>
 	VatReturnType *VatReturnType `json:"VatReturnType,omitempty"`
 }
 

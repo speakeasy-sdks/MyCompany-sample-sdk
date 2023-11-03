@@ -7,15 +7,15 @@ import (
 	"fmt"
 )
 
-// VatReturnType - Maps to VatReturnCategory<p>Members:</p><ul><li><i>generalIndustry</i> - Alminnelig næring</li><li><i>primaryIndustry</i> - Primærnmæring</li><li><i>vatFeeCompensation</i> - Merverdiavgiftskompensasjon</li><li><i>reverseVatObligation</i> - Omvendt avgiftsplikt</li><li><i>noReporting</i> - Ingen rapportering</li></ul>
+// VatReturnType - The type of VAT returns the client should deliver for it's principal activity.<p>Members:</p><ul><li><i>generalIndustry</i> - General Industry (Norwegian: Alminnelig næring)</li><li><i>primaryIndustry</i> - Primary Industry (Norwegian: Primærnmæring)</li><li><i>vatCompensation</i> - Vat Compensation (Norwegian: Merverdiavgiftskompensasjon)ø</li><li><i>reverseVatLiability</i> - Reverse VAT Liability (Norwegian: Omvendt avgiftsplikt)</li><li><i>noReporting</i> - No reporting (Norwegian: Ingen rapportering)</li></ul>
 type VatReturnType string
 
 const (
-	VatReturnTypeGeneralIndustry      VatReturnType = "generalIndustry"
-	VatReturnTypePrimaryIndustry      VatReturnType = "primaryIndustry"
-	VatReturnTypeVatFeeCompensation   VatReturnType = "vatFeeCompensation"
-	VatReturnTypeReverseVatObligation VatReturnType = "reverseVatObligation"
-	VatReturnTypeNoReporting          VatReturnType = "noReporting"
+	VatReturnTypeGeneralIndustry     VatReturnType = "generalIndustry"
+	VatReturnTypePrimaryIndustry     VatReturnType = "primaryIndustry"
+	VatReturnTypeVatCompensation     VatReturnType = "vatCompensation"
+	VatReturnTypeReverseVatLiability VatReturnType = "reverseVatLiability"
+	VatReturnTypeNoReporting         VatReturnType = "noReporting"
 )
 
 func (e VatReturnType) ToPointer() *VatReturnType {
@@ -32,9 +32,9 @@ func (e *VatReturnType) UnmarshalJSON(data []byte) error {
 		fallthrough
 	case "primaryIndustry":
 		fallthrough
-	case "vatFeeCompensation":
+	case "vatCompensation":
 		fallthrough
-	case "reverseVatObligation":
+	case "reverseVatLiability":
 		fallthrough
 	case "noReporting":
 		*e = VatReturnType(v)

@@ -18,7 +18,7 @@ type FinancialSettingsDto struct {
 	CurrencyGainsAccountNo *int64 `json:"CurrencyGainsAccountNo,omitempty"`
 	// Gets the general ledger account code of the accountused for posting currency losses (disagio). More information of accounts can be retrieved using the GeneralLedgerAccounts endpoint.
 	CurrencyLossAccountNo *int64 `json:"CurrencyLossAccountNo,omitempty"`
-	// Enum defining the months of a year.<p>Members:</p><ul><li><i>none</i> - None, error value</li><li><i>january</i> - January</li><li><i>february</i> - February</li><li><i>march</i> - March</li><li><i>april</i> - April</li><li><i>may</i> - May</li><li><i>june</i> - June</li><li><i>july</i> - July</li><li><i>august</i> - August</li><li><i>september</i> - September</li><li><i>october</i> - October</li><li><i>november</i> - November</li><li><i>december</i> - December</li></ul>
+	// Enum defining the months of a year.<p>Members:</p><ul><li><i>january</i> - January</li><li><i>february</i> - February</li><li><i>march</i> - March</li><li><i>april</i> - April</li><li><i>may</i> - May</li><li><i>june</i> - June</li><li><i>july</i> - July</li><li><i>august</i> - August</li><li><i>september</i> - September</li><li><i>october</i> - October</li><li><i>november</i> - November</li><li><i>december</i> - December</li></ul>
 	FinancialYearEndMonth *Months `json:"FinancialYearEndMonth,omitempty"`
 	// Gets the last changed timestamp. Last changed will update when the settings are created, or whenever the settings are changed.
 	LastChangedDateTimeOffset *time.Time `json:"LastChangedDateTimeOffset,omitempty"`

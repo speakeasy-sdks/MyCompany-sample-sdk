@@ -7,11 +7,10 @@ import (
 	"fmt"
 )
 
-// Months - Enum defining the months of a year.<p>Members:</p><ul><li><i>none</i> - None, error value</li><li><i>january</i> - January</li><li><i>february</i> - February</li><li><i>march</i> - March</li><li><i>april</i> - April</li><li><i>may</i> - May</li><li><i>june</i> - June</li><li><i>july</i> - July</li><li><i>august</i> - August</li><li><i>september</i> - September</li><li><i>october</i> - October</li><li><i>november</i> - November</li><li><i>december</i> - December</li></ul>
+// Months - Enum defining the months of a year.<p>Members:</p><ul><li><i>january</i> - January</li><li><i>february</i> - February</li><li><i>march</i> - March</li><li><i>april</i> - April</li><li><i>may</i> - May</li><li><i>june</i> - June</li><li><i>july</i> - July</li><li><i>august</i> - August</li><li><i>september</i> - September</li><li><i>october</i> - October</li><li><i>november</i> - November</li><li><i>december</i> - December</li></ul>
 type Months string
 
 const (
-	MonthsNone      Months = "none"
 	MonthsJanuary   Months = "january"
 	MonthsFebruary  Months = "february"
 	MonthsMarch     Months = "march"
@@ -36,8 +35,6 @@ func (e *Months) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	switch v {
-	case "none":
-		fallthrough
 	case "january":
 		fallthrough
 	case "february":
