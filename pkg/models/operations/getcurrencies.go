@@ -13,7 +13,7 @@ type GetCurrenciesRequest struct {
 	// Filter by isActive parameter..
 	IsActive *bool `queryParam:"style=form,explode=true,name=isActive"`
 	// Structure containing various resource-filter options
-	ResourceParameter *shared.ResourceParametersInput `queryParam:"style=form,explode=true,name=resourceParameter"`
+	ResourceParameter *shared.ResourceParameters `queryParam:"style=form,explode=true,name=resourceParameter"`
 }
 
 func (o *GetCurrenciesRequest) GetCurrencyCode() *string {
@@ -30,7 +30,7 @@ func (o *GetCurrenciesRequest) GetIsActive() *bool {
 	return o.IsActive
 }
 
-func (o *GetCurrenciesRequest) GetResourceParameter() *shared.ResourceParametersInput {
+func (o *GetCurrenciesRequest) GetResourceParameter() *shared.ResourceParameters {
 	if o == nil {
 		return nil
 	}
@@ -40,12 +40,12 @@ func (o *GetCurrenciesRequest) GetResourceParameter() *shared.ResourceParameters
 type GetCurrenciesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Given when resource returned successfully
-	CurrencyDtos []shared.CurrencyDto
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Given when resource returned successfully
+	Classes []shared.CurrencyDto
 }
 
 func (o *GetCurrenciesResponse) GetContentType() string {
@@ -53,13 +53,6 @@ func (o *GetCurrenciesResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetCurrenciesResponse) GetCurrencyDtos() []shared.CurrencyDto {
-	if o == nil {
-		return nil
-	}
-	return o.CurrencyDtos
 }
 
 func (o *GetCurrenciesResponse) GetStatusCode() int {
@@ -74,4 +67,11 @@ func (o *GetCurrenciesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetCurrenciesResponse) GetClasses() []shared.CurrencyDto {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

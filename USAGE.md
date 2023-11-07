@@ -17,7 +17,7 @@ func main() {
 
 	ctx := context.Background()
 	res, err := s.Currencies.GetCurrencies(ctx, operations.GetCurrenciesRequest{
-		ResourceParameter: &shared.ResourceParametersInput{
+		ResourceParameter: &shared.ResourceParameters{
 			Fields:     mycompanysamplesdk.String("string"),
 			OrderBy:    mycompanysamplesdk.String("string"),
 			PageNumber: mycompanysamplesdk.Int(2),
@@ -28,7 +28,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if res.CurrencyDtos != nil {
+	if res.Classes != nil {
 		// handle response
 	}
 }

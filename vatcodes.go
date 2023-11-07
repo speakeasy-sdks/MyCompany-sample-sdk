@@ -15,12 +15,12 @@ import (
 	"strings"
 )
 
-type vatCodes struct {
+type VatCodes struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newVatCodes(sdkConfig sdkConfiguration) *vatCodes {
-	return &vatCodes{
+func newVatCodes(sdkConfig sdkConfiguration) *VatCodes {
+	return &VatCodes{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -29,7 +29,7 @@ func newVatCodes(sdkConfig sdkConfiguration) *vatCodes {
 // Gets the SAF-T vat codes and any custom codes set on the client.
 // Custom codes will have a prefix with the letter 'C', and will be based on the SAF-T codes, but used if the client have mixed vat conditions, for instance.
 // Compensation codes has a prefix with the letter 'K'.
-func (s *vatCodes) GetVatCodes(ctx context.Context, request operations.GetVatCodesRequest) (*operations.GetVatCodesResponse, error) {
+func (s *VatCodes) GetVatCodes(ctx context.Context, request operations.GetVatCodesRequest) (*operations.GetVatCodesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/VatCodes"
 
@@ -77,7 +77,7 @@ func (s *vatCodes) GetVatCodes(ctx context.Context, request operations.GetVatCod
 				return nil, err
 			}
 
-			res.VatCodeDtos = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

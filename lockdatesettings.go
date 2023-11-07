@@ -15,18 +15,18 @@ import (
 	"strings"
 )
 
-type lockDateSettings struct {
+type LockDateSettings struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newLockDateSettings(sdkConfig sdkConfiguration) *lockDateSettings {
-	return &lockDateSettings{
+func newLockDateSettings(sdkConfig sdkConfiguration) *LockDateSettings {
+	return &LockDateSettings{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetLockDate - Gets the lock date on the client. (Auth roles: CommonServices,CommonServices_Full)
-func (s *lockDateSettings) GetLockDate(ctx context.Context) (*operations.GetLockDateResponse, error) {
+func (s *LockDateSettings) GetLockDate(ctx context.Context) (*operations.GetLockDateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/LockDateSettings"
 

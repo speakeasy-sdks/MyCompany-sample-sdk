@@ -2,14 +2,14 @@
 
 package shared
 
-type OperationValue struct {
+type Value struct {
 }
 
 type Operation struct {
-	From  *string         `json:"from,omitempty"`
-	Op    *string         `json:"op,omitempty"`
-	Path  *string         `json:"path,omitempty"`
-	Value *OperationValue `json:"value,omitempty"`
+	From  *string `json:"from,omitempty"`
+	Op    *string `json:"op,omitempty"`
+	Path  *string `json:"path,omitempty"`
+	Value *Value  `json:"value,omitempty"`
 }
 
 func (o *Operation) GetFrom() *string {
@@ -33,7 +33,7 @@ func (o *Operation) GetPath() *string {
 	return o.Path
 }
 
-func (o *Operation) GetValue() *OperationValue {
+func (o *Operation) GetValue() *Value {
 	if o == nil {
 		return nil
 	}

@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-type financialSettings struct {
+type FinancialSettings struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newFinancialSettings(sdkConfig sdkConfiguration) *financialSettings {
-	return &financialSettings{
+func newFinancialSettings(sdkConfig sdkConfiguration) *FinancialSettings {
+	return &FinancialSettings{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetFinancialSettings - Gets the financial settings on the client, and conversion date. (Auth roles: CommonServices,CommonServices_Full)
 // Changes in agio (gains) and disagio (loss) accounts does not update the LastChangedDateTimeOffset property in FinancialSettings.
-func (s *financialSettings) GetFinancialSettings(ctx context.Context) (*operations.GetFinancialSettingsResponse, error) {
+func (s *FinancialSettings) GetFinancialSettings(ctx context.Context) (*operations.GetFinancialSettingsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/FinancialSettings"
 

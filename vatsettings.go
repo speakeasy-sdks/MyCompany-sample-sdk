@@ -15,18 +15,18 @@ import (
 	"strings"
 )
 
-type vatSettings struct {
+type VatSettings struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newVatSettings(sdkConfig sdkConfiguration) *vatSettings {
-	return &vatSettings{
+func newVatSettings(sdkConfig sdkConfiguration) *VatSettings {
+	return &VatSettings{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetVatSettings - Gets the vat settings on the client. (Auth roles: CommonServices,CommonServices_Full)
-func (s *vatSettings) GetVatSettings(ctx context.Context) (*operations.GetVatSettingsResponse, error) {
+func (s *VatSettings) GetVatSettings(ctx context.Context) (*operations.GetVatSettingsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/VatSettings"
 

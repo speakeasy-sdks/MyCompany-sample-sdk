@@ -15,7 +15,7 @@ type GetGeneralLedgerAccountsRequest struct {
 	// Filter by last changed timestamp.
 	LastChangedDateTimeOffsetGreaterThan *time.Time `queryParam:"style=form,explode=true,name=lastChangedDateTimeOffsetGreaterThan"`
 	// Structure containing various resource-filter options
-	ResourceParameter *shared.ResourceParametersInput `queryParam:"style=form,explode=true,name=resourceParameter"`
+	ResourceParameter *shared.ResourceParameters `queryParam:"style=form,explode=true,name=resourceParameter"`
 }
 
 func (g GetGeneralLedgerAccountsRequest) MarshalJSON() ([]byte, error) {
@@ -43,7 +43,7 @@ func (o *GetGeneralLedgerAccountsRequest) GetLastChangedDateTimeOffsetGreaterTha
 	return o.LastChangedDateTimeOffsetGreaterThan
 }
 
-func (o *GetGeneralLedgerAccountsRequest) GetResourceParameter() *shared.ResourceParametersInput {
+func (o *GetGeneralLedgerAccountsRequest) GetResourceParameter() *shared.ResourceParameters {
 	if o == nil {
 		return nil
 	}
@@ -53,12 +53,12 @@ func (o *GetGeneralLedgerAccountsRequest) GetResourceParameter() *shared.Resourc
 type GetGeneralLedgerAccountsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Given when resource returned successfully
-	GeneralLedgerAccountDtos []shared.GeneralLedgerAccountDto
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Given when resource returned successfully
+	Classes []shared.GeneralLedgerAccountDto
 }
 
 func (o *GetGeneralLedgerAccountsResponse) GetContentType() string {
@@ -66,13 +66,6 @@ func (o *GetGeneralLedgerAccountsResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetGeneralLedgerAccountsResponse) GetGeneralLedgerAccountDtos() []shared.GeneralLedgerAccountDto {
-	if o == nil {
-		return nil
-	}
-	return o.GeneralLedgerAccountDtos
 }
 
 func (o *GetGeneralLedgerAccountsResponse) GetStatusCode() int {
@@ -87,4 +80,11 @@ func (o *GetGeneralLedgerAccountsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetGeneralLedgerAccountsResponse) GetClasses() []shared.GeneralLedgerAccountDto {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

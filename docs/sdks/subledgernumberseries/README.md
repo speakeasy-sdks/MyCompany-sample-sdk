@@ -1,5 +1,5 @@
 # SubLedgerNumberSeries
-(*SubLedgerNumberSeries*)
+(*.SubLedgerNumberSeries*)
 
 ### Available Operations
 
@@ -29,7 +29,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.SubLedgerNumberSeries.GetSubLedgerNumberSeries(ctx, operations.GetSubLedgerNumberSeriesRequest{
-        ResourceParameter: &shared.ResourceParametersInput{
+        ResourceParameter: &shared.ResourceParameters{
             Fields: mycompanysamplesdk.String("string"),
             OrderBy: mycompanysamplesdk.String("string"),
             PageNumber: mycompanysamplesdk.Int(2),
@@ -40,7 +40,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.SubLedgerNumberSeriesDtos != nil {
+    if res.Classes != nil {
         // handle response
     }
 }

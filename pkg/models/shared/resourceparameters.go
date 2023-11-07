@@ -2,8 +2,8 @@
 
 package shared
 
-// ResourceParametersInput - Structure containing various resource-filter options
-type ResourceParametersInput struct {
+// ResourceParameters - Structure containing various resource-filter options
+type ResourceParameters struct {
 	// Define desired fields that should be returned in Json (All fields by default).
 	Fields *string `queryParam:"name=Fields"`
 	// Define fields to order by, and if it should order asc (default) or desc).
@@ -16,35 +16,35 @@ type ResourceParametersInput struct {
 	UseDatabaseValidation *bool `queryParam:"name=UseDatabaseValidation"`
 }
 
-func (o *ResourceParametersInput) GetFields() *string {
+func (o *ResourceParameters) GetFields() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Fields
 }
 
-func (o *ResourceParametersInput) GetOrderBy() *string {
+func (o *ResourceParameters) GetOrderBy() *string {
 	if o == nil {
 		return nil
 	}
 	return o.OrderBy
 }
 
-func (o *ResourceParametersInput) GetPageNumber() *int {
+func (o *ResourceParameters) GetPageNumber() *int {
 	if o == nil {
 		return nil
 	}
 	return o.PageNumber
 }
 
-func (o *ResourceParametersInput) GetPageSize() *int {
+func (o *ResourceParameters) GetPageSize() *int {
 	if o == nil {
 		return nil
 	}
 	return o.PageSize
 }
 
-func (o *ResourceParametersInput) GetUseDatabaseValidation() *bool {
+func (o *ResourceParameters) GetUseDatabaseValidation() *bool {
 	if o == nil {
 		return nil
 	}

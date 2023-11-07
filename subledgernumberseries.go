@@ -15,12 +15,12 @@ import (
 	"strings"
 )
 
-type subLedgerNumberSeries struct {
+type SubLedgerNumberSeries struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSubLedgerNumberSeries(sdkConfig sdkConfiguration) *subLedgerNumberSeries {
-	return &subLedgerNumberSeries{
+func newSubLedgerNumberSeries(sdkConfig sdkConfiguration) *SubLedgerNumberSeries {
+	return &SubLedgerNumberSeries{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -28,7 +28,7 @@ func newSubLedgerNumberSeries(sdkConfig sdkConfiguration) *subLedgerNumberSeries
 // GetSubLedgerNumberSeries - Gets the sub-ledger number series set on the client (Auth roles: CommonServices,CommonServices_Full)
 // Gets the sub-ledger number series set on the client. Sub-ledgers are sub-accounts of a general ledger account, used
 // for entries related to either customers, suppliers or employees.
-func (s *subLedgerNumberSeries) GetSubLedgerNumberSeries(ctx context.Context, request operations.GetSubLedgerNumberSeriesRequest) (*operations.GetSubLedgerNumberSeriesResponse, error) {
+func (s *SubLedgerNumberSeries) GetSubLedgerNumberSeries(ctx context.Context, request operations.GetSubLedgerNumberSeriesRequest) (*operations.GetSubLedgerNumberSeriesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/SubLedgerNumberSeries"
 
@@ -76,7 +76,7 @@ func (s *subLedgerNumberSeries) GetSubLedgerNumberSeries(ctx context.Context, re
 				return nil, err
 			}
 
-			res.SubLedgerNumberSeriesDtos = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -106,7 +106,7 @@ func (s *subLedgerNumberSeries) GetSubLedgerNumberSeries(ctx context.Context, re
 }
 
 // GetSubLedgerNumberSeriesID - Get a SubLedgerNumberSeries by ID. (Auth roles: CommonServices,CommonServices_Full)
-func (s *subLedgerNumberSeries) GetSubLedgerNumberSeriesID(ctx context.Context, request operations.GetSubLedgerNumberSeriesIDRequest) (*operations.GetSubLedgerNumberSeriesIDResponse, error) {
+func (s *SubLedgerNumberSeries) GetSubLedgerNumberSeriesID(ctx context.Context, request operations.GetSubLedgerNumberSeriesIDRequest) (*operations.GetSubLedgerNumberSeriesIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/SubLedgerNumberSeries/{id}", request, nil)
 	if err != nil {

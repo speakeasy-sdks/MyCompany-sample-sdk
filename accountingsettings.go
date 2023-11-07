@@ -73,13 +73,13 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 //
 //	**Base url:** *https://goapi.poweroffice.net/v2/*
 type AccountingSettings struct {
-	Currencies            *currencies
-	FinancialSettings     *financialSettings
-	GeneralLedgerAccounts *generalLedgerAccounts
-	LockDateSettings      *lockDateSettings
-	SubLedgerNumberSeries *subLedgerNumberSeries
-	VatCodes              *vatCodes
-	VatSettings           *vatSettings
+	Currencies            *Currencies
+	FinancialSettings     *FinancialSettings
+	GeneralLedgerAccounts *GeneralLedgerAccounts
+	LockDateSettings      *LockDateSettings
+	SubLedgerNumberSeries *SubLedgerNumberSeries
+	VatCodes              *VatCodes
+	VatSettings           *VatSettings
 
 	sdkConfiguration sdkConfiguration
 }
@@ -134,9 +134,9 @@ func New(opts ...SDKOption) *AccountingSettings {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "v2",
-			SDKVersion:        "0.2.1",
-			GenVersion:        "2.173.0",
-			UserAgent:         "speakeasy-sdk/go 0.2.1 2.173.0 v2 github.com/speakeasy-sdks/MyCompany-sample-sdk",
+			SDKVersion:        "0.3.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 0.3.0 2.181.1 v2 github.com/speakeasy-sdks/MyCompany-sample-sdk",
 		},
 	}
 	for _, opt := range opts {

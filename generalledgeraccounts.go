@@ -15,18 +15,18 @@ import (
 	"strings"
 )
 
-type generalLedgerAccounts struct {
+type GeneralLedgerAccounts struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newGeneralLedgerAccounts(sdkConfig sdkConfiguration) *generalLedgerAccounts {
-	return &generalLedgerAccounts{
+func newGeneralLedgerAccounts(sdkConfig sdkConfiguration) *GeneralLedgerAccounts {
+	return &GeneralLedgerAccounts{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetGeneralLedgerAccountByID - Get a GeneralLedgerAccount by ID (Auth roles: GeneralLedgerAccount,GeneralLedgerAccount_Full)
-func (s *generalLedgerAccounts) GetGeneralLedgerAccountByID(ctx context.Context, request operations.GetGeneralLedgerAccountByIDRequest) (*operations.GetGeneralLedgerAccountByIDResponse, error) {
+func (s *GeneralLedgerAccounts) GetGeneralLedgerAccountByID(ctx context.Context, request operations.GetGeneralLedgerAccountByIDRequest) (*operations.GetGeneralLedgerAccountByIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/GeneralLedgerAccounts/{id}", request, nil)
 	if err != nil {
@@ -92,7 +92,7 @@ func (s *generalLedgerAccounts) GetGeneralLedgerAccountByID(ctx context.Context,
 }
 
 // GetGeneralLedgerAccounts - Get a list of general ledger accounts. (Auth roles: GeneralLedgerAccount,GeneralLedgerAccount_Full)
-func (s *generalLedgerAccounts) GetGeneralLedgerAccounts(ctx context.Context, request operations.GetGeneralLedgerAccountsRequest) (*operations.GetGeneralLedgerAccountsResponse, error) {
+func (s *GeneralLedgerAccounts) GetGeneralLedgerAccounts(ctx context.Context, request operations.GetGeneralLedgerAccountsRequest) (*operations.GetGeneralLedgerAccountsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/GeneralLedgerAccounts"
 
@@ -140,7 +140,7 @@ func (s *generalLedgerAccounts) GetGeneralLedgerAccounts(ctx context.Context, re
 				return nil, err
 			}
 
-			res.GeneralLedgerAccountDtos = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -170,7 +170,7 @@ func (s *generalLedgerAccounts) GetGeneralLedgerAccounts(ctx context.Context, re
 }
 
 // DeleteGeneralLedgerAccountsID - Deletes a General Ledger Account with a given id. (Auth roles: GeneralLedgerAccount_Full)
-func (s *generalLedgerAccounts) DeleteGeneralLedgerAccountsID(ctx context.Context, request operations.DeleteGeneralLedgerAccountsIDRequest) (*operations.DeleteGeneralLedgerAccountsIDResponse, error) {
+func (s *GeneralLedgerAccounts) DeleteGeneralLedgerAccountsID(ctx context.Context, request operations.DeleteGeneralLedgerAccountsIDRequest) (*operations.DeleteGeneralLedgerAccountsIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/GeneralLedgerAccounts/{id}", request, nil)
 	if err != nil {
@@ -237,7 +237,7 @@ func (s *generalLedgerAccounts) DeleteGeneralLedgerAccountsID(ctx context.Contex
 }
 
 // PatchGeneralLedgerAccountsID - Update an existing general ledger account. (Auth roles: GeneralLedgerAccount_Full)
-func (s *generalLedgerAccounts) PatchGeneralLedgerAccountsID(ctx context.Context, request operations.PatchGeneralLedgerAccountsIDRequest) (*operations.PatchGeneralLedgerAccountsIDResponse, error) {
+func (s *GeneralLedgerAccounts) PatchGeneralLedgerAccountsID(ctx context.Context, request operations.PatchGeneralLedgerAccountsIDRequest) (*operations.PatchGeneralLedgerAccountsIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/GeneralLedgerAccounts/{id}", request, nil)
 	if err != nil {
@@ -322,7 +322,7 @@ func (s *generalLedgerAccounts) PatchGeneralLedgerAccountsID(ctx context.Context
 }
 
 // PostGeneralLedgerAccounts - Create a new general ledger account with setting. (Auth roles: GeneralLedgerAccount_Full)
-func (s *generalLedgerAccounts) PostGeneralLedgerAccounts(ctx context.Context, request *shared.GeneralLedgerAccountPostDto) (*operations.PostGeneralLedgerAccountsResponse, error) {
+func (s *GeneralLedgerAccounts) PostGeneralLedgerAccounts(ctx context.Context, request *shared.GeneralLedgerAccountPostDto) (*operations.PostGeneralLedgerAccountsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/GeneralLedgerAccounts"
 

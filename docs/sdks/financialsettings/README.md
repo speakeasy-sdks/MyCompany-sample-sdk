@@ -1,5 +1,5 @@
 # FinancialSettings
-(*FinancialSettings*)
+(*.FinancialSettings*)
 
 ### Available Operations
 

@@ -15,12 +15,12 @@ import (
 	"strings"
 )
 
-type currencies struct {
+type Currencies struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newCurrencies(sdkConfig sdkConfiguration) *currencies {
-	return &currencies{
+func newCurrencies(sdkConfig sdkConfiguration) *Currencies {
+	return &Currencies{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -30,7 +30,7 @@ func newCurrencies(sdkConfig sdkConfiguration) *currencies {
 // The currencies in active use on the client has the property IsActive = true.
 // Active currencies can be used in GUI operations in Go, but does not affect which currencies that can be used when
 // posting transactions using the APIs
-func (s *currencies) GetCurrencies(ctx context.Context, request operations.GetCurrenciesRequest) (*operations.GetCurrenciesResponse, error) {
+func (s *Currencies) GetCurrencies(ctx context.Context, request operations.GetCurrenciesRequest) (*operations.GetCurrenciesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/Currencies"
 
@@ -78,7 +78,7 @@ func (s *currencies) GetCurrencies(ctx context.Context, request operations.GetCu
 				return nil, err
 			}
 
-			res.CurrencyDtos = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

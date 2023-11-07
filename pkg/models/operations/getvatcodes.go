@@ -13,7 +13,7 @@ type GetVatCodesRequest struct {
 	// Returns both active and inactive codes as default. True returns active codes, False returns only inactive codes.
 	IsActive *bool `queryParam:"style=form,explode=true,name=isActive"`
 	// Structure containing various resource-filter options
-	ResourceParameter *shared.ResourceParametersInput `queryParam:"style=form,explode=true,name=resourceParameter"`
+	ResourceParameter *shared.ResourceParameters `queryParam:"style=form,explode=true,name=resourceParameter"`
 }
 
 func (o *GetVatCodesRequest) GetIncludeExpired() *bool {
@@ -30,7 +30,7 @@ func (o *GetVatCodesRequest) GetIsActive() *bool {
 	return o.IsActive
 }
 
-func (o *GetVatCodesRequest) GetResourceParameter() *shared.ResourceParametersInput {
+func (o *GetVatCodesRequest) GetResourceParameter() *shared.ResourceParameters {
 	if o == nil {
 		return nil
 	}
@@ -45,7 +45,7 @@ type GetVatCodesResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Given when resource returned successfully.
-	VatCodeDtos []shared.VatCodeDto
+	Classes []shared.VatCodeDto
 }
 
 func (o *GetVatCodesResponse) GetContentType() string {
@@ -69,9 +69,9 @@ func (o *GetVatCodesResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetVatCodesResponse) GetVatCodeDtos() []shared.VatCodeDto {
+func (o *GetVatCodesResponse) GetClasses() []shared.VatCodeDto {
 	if o == nil {
 		return nil
 	}
-	return o.VatCodeDtos
+	return o.Classes
 }

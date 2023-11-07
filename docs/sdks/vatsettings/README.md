@@ -1,5 +1,5 @@
 # VatSettings
-(*VatSettings*)
+(*.VatSettings*)
 
 ### Available Operations
 

@@ -1,5 +1,5 @@
 # GeneralLedgerAccounts
-(*GeneralLedgerAccounts*)
+(*.GeneralLedgerAccounts*)
 
 ### Available Operations
 
@@ -77,7 +77,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.GeneralLedgerAccounts.GetGeneralLedgerAccounts(ctx, operations.GetGeneralLedgerAccountsRequest{
-        ResourceParameter: &shared.ResourceParametersInput{
+        ResourceParameter: &shared.ResourceParameters{
             Fields: mycompanysamplesdk.String("string"),
             OrderBy: mycompanysamplesdk.String("string"),
             PageNumber: mycompanysamplesdk.Int(2),
@@ -88,7 +88,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GeneralLedgerAccountDtos != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -177,7 +177,7 @@ func main() {
     res, err := s.GeneralLedgerAccounts.PatchGeneralLedgerAccountsID(ctx, operations.PatchGeneralLedgerAccountsIDRequest{
         RequestBody: []shared.Operation{
             shared.Operation{
-                Value: &shared.OperationValue{},
+                Value: &shared.Value{},
             },
         },
         ID: 24189,

@@ -13,7 +13,7 @@ type GetSubLedgerNumberSeriesRequest struct {
 	// Filter series based on the isDefault property. Blank means no filter.
 	IsDefault *bool `queryParam:"style=form,explode=true,name=isDefault"`
 	// Structure containing various resource-filter options
-	ResourceParameter *shared.ResourceParametersInput `queryParam:"style=form,explode=true,name=resourceParameter"`
+	ResourceParameter *shared.ResourceParameters `queryParam:"style=form,explode=true,name=resourceParameter"`
 	// Filter by SubledgerNumberSeriesType
 	//             <br>Note: The SubLedgerNumberSeriesType filter is case sensitive.
 	SubLedgerNumberSeriesType *string `queryParam:"style=form,explode=true,name=subLedgerNumberSeriesType"`
@@ -33,7 +33,7 @@ func (o *GetSubLedgerNumberSeriesRequest) GetIsDefault() *bool {
 	return o.IsDefault
 }
 
-func (o *GetSubLedgerNumberSeriesRequest) GetResourceParameter() *shared.ResourceParametersInput {
+func (o *GetSubLedgerNumberSeriesRequest) GetResourceParameter() *shared.ResourceParameters {
 	if o == nil {
 		return nil
 	}
@@ -55,7 +55,7 @@ type GetSubLedgerNumberSeriesResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Given when resource returned successfully
-	SubLedgerNumberSeriesDtos []shared.SubLedgerNumberSeriesDto
+	Classes []shared.SubLedgerNumberSeriesDto
 }
 
 func (o *GetSubLedgerNumberSeriesResponse) GetContentType() string {
@@ -79,9 +79,9 @@ func (o *GetSubLedgerNumberSeriesResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetSubLedgerNumberSeriesResponse) GetSubLedgerNumberSeriesDtos() []shared.SubLedgerNumberSeriesDto {
+func (o *GetSubLedgerNumberSeriesResponse) GetClasses() []shared.SubLedgerNumberSeriesDto {
 	if o == nil {
 		return nil
 	}
-	return o.SubLedgerNumberSeriesDtos
+	return o.Classes
 }

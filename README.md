@@ -32,7 +32,7 @@ func main() {
 
 	ctx := context.Background()
 	res, err := s.Currencies.GetCurrencies(ctx, operations.GetCurrenciesRequest{
-		ResourceParameter: &shared.ResourceParametersInput{
+		ResourceParameter: &shared.ResourceParameters{
 			Fields:     mycompanysamplesdk.String("string"),
 			OrderBy:    mycompanysamplesdk.String("string"),
 			PageNumber: mycompanysamplesdk.Int(2),
@@ -43,7 +43,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if res.CurrencyDtos != nil {
+	if res.Classes != nil {
 		// handle response
 	}
 }
@@ -55,15 +55,15 @@ func main() {
 ## Available Resources and Operations
 
 
-### [Currencies](docs/sdks/currencies/README.md)
+### [.Currencies](docs/sdks/currencies/README.md)
 
 * [GetCurrencies](docs/sdks/currencies/README.md#getcurrencies) - Gets the currencies set on the client. (Auth roles: CommonServices,CommonServices_Full)
 
-### [FinancialSettings](docs/sdks/financialsettings/README.md)
+### [.FinancialSettings](docs/sdks/financialsettings/README.md)
 
 * [GetFinancialSettings](docs/sdks/financialsettings/README.md#getfinancialsettings) - Gets the financial settings on the client, and conversion date. (Auth roles: CommonServices,CommonServices_Full)
 
-### [GeneralLedgerAccounts](docs/sdks/generalledgeraccounts/README.md)
+### [.GeneralLedgerAccounts](docs/sdks/generalledgeraccounts/README.md)
 
 * [GetGeneralLedgerAccountByID](docs/sdks/generalledgeraccounts/README.md#getgeneralledgeraccountbyid) - Get a GeneralLedgerAccount by ID (Auth roles: GeneralLedgerAccount,GeneralLedgerAccount_Full)
 * [GetGeneralLedgerAccounts](docs/sdks/generalledgeraccounts/README.md#getgeneralledgeraccounts) - Get a list of general ledger accounts. (Auth roles: GeneralLedgerAccount,GeneralLedgerAccount_Full)
@@ -71,20 +71,20 @@ func main() {
 * [PatchGeneralLedgerAccountsID](docs/sdks/generalledgeraccounts/README.md#patchgeneralledgeraccountsid) - Update an existing general ledger account. (Auth roles: GeneralLedgerAccount_Full)
 * [PostGeneralLedgerAccounts](docs/sdks/generalledgeraccounts/README.md#postgeneralledgeraccounts) - Create a new general ledger account with setting. (Auth roles: GeneralLedgerAccount_Full)
 
-### [LockDateSettings](docs/sdks/lockdatesettings/README.md)
+### [.LockDateSettings](docs/sdks/lockdatesettings/README.md)
 
 * [GetLockDate](docs/sdks/lockdatesettings/README.md#getlockdate) - Gets the lock date on the client. (Auth roles: CommonServices,CommonServices_Full)
 
-### [SubLedgerNumberSeries](docs/sdks/subledgernumberseries/README.md)
+### [.SubLedgerNumberSeries](docs/sdks/subledgernumberseries/README.md)
 
 * [GetSubLedgerNumberSeries](docs/sdks/subledgernumberseries/README.md#getsubledgernumberseries) - Gets the sub-ledger number series set on the client (Auth roles: CommonServices,CommonServices_Full)
 * [GetSubLedgerNumberSeriesID](docs/sdks/subledgernumberseries/README.md#getsubledgernumberseriesid) - Get a SubLedgerNumberSeries by ID. (Auth roles: CommonServices,CommonServices_Full)
 
-### [VatCodes](docs/sdks/vatcodes/README.md)
+### [.VatCodes](docs/sdks/vatcodes/README.md)
 
 * [GetVatCodes](docs/sdks/vatcodes/README.md#getvatcodes) - Gets the vat codes on the client. (Auth roles: CommonServices,CommonServices_Full)
 
-### [VatSettings](docs/sdks/vatsettings/README.md)
+### [.VatSettings](docs/sdks/vatsettings/README.md)
 
 * [GetVatSettings](docs/sdks/vatsettings/README.md#getvatsettings) - Gets the vat settings on the client. (Auth roles: CommonServices,CommonServices_Full)
 <!-- End SDK Available Operations -->
@@ -145,7 +145,7 @@ func main() {
 
 	ctx := context.Background()
 	res, err := s.Currencies.GetCurrencies(ctx, operations.GetCurrenciesRequest{
-		ResourceParameter: &shared.ResourceParametersInput{
+		ResourceParameter: &shared.ResourceParameters{
 			Fields:     mycompanysamplesdk.String("string"),
 			OrderBy:    mycompanysamplesdk.String("string"),
 			PageNumber: mycompanysamplesdk.Int(2),
@@ -154,7 +154,7 @@ func main() {
 	})
 	if err != nil {
 
-		var e *ProblemDetails
+		var e *sdkerrors.ProblemDetails
 		if errors.As(err, &e) {
 			// handle error
 			log.Fatal(e.Error())
@@ -181,7 +181,6 @@ You can override the default server globally using the `WithServerIndex` option 
 
 For example:
 
-
 ```go
 package main
 
@@ -200,7 +199,7 @@ func main() {
 
 	ctx := context.Background()
 	res, err := s.Currencies.GetCurrencies(ctx, operations.GetCurrenciesRequest{
-		ResourceParameter: &shared.ResourceParametersInput{
+		ResourceParameter: &shared.ResourceParameters{
 			Fields:     mycompanysamplesdk.String("string"),
 			OrderBy:    mycompanysamplesdk.String("string"),
 			PageNumber: mycompanysamplesdk.Int(2),
@@ -211,7 +210,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if res.CurrencyDtos != nil {
+	if res.Classes != nil {
 		// handle response
 	}
 }
@@ -222,7 +221,6 @@ func main() {
 ## Override Server URL Per-Client
 
 The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
-
 
 ```go
 package main
@@ -242,7 +240,7 @@ func main() {
 
 	ctx := context.Background()
 	res, err := s.Currencies.GetCurrencies(ctx, operations.GetCurrenciesRequest{
-		ResourceParameter: &shared.ResourceParametersInput{
+		ResourceParameter: &shared.ResourceParameters{
 			Fields:     mycompanysamplesdk.String("string"),
 			OrderBy:    mycompanysamplesdk.String("string"),
 			PageNumber: mycompanysamplesdk.Int(2),
@@ -253,7 +251,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if res.CurrencyDtos != nil {
+	if res.Classes != nil {
 		// handle response
 	}
 }

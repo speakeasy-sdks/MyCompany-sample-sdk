@@ -1,4 +1,4 @@
-# ResourceParametersInput
+# ResourceParameters
 
 Structure containing various resource-filter options
 

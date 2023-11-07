@@ -1,5 +1,5 @@
 # LockDateSettings
-(*LockDateSettings*)
+(*.LockDateSettings*)
 
 ### Available Operations
 
