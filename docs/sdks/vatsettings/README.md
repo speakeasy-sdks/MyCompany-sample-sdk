@@ -1,5 +1,5 @@
 # VatSettings
-(*.VatSettings*)
+(*VatSettings*)
 
 ### Available Operations
 
@@ -44,5 +44,7 @@ func main() {
 
 ### Response
 
-**[*operations.GetVatSettingsResponse](../../models/operations/getvatsettingsresponse.md), error**
-
+**[*operations.GetVatSettingsResponse](../../pkg/models/operations/getvatsettingsresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

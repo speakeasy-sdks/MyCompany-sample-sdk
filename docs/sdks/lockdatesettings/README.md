@@ -1,5 +1,5 @@
 # LockDateSettings
-(*.LockDateSettings*)
+(*LockDateSettings*)
 
 ### Available Operations
 
@@ -44,5 +44,7 @@ func main() {
 
 ### Response
 
-**[*operations.GetLockDateResponse](../../models/operations/getlockdateresponse.md), error**
-
+**[*operations.GetLockDateResponse](../../pkg/models/operations/getlockdateresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

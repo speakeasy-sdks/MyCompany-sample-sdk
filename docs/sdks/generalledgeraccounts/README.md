@@ -1,5 +1,5 @@
 # GeneralLedgerAccounts
-(*.GeneralLedgerAccounts*)
+(*GeneralLedgerAccounts*)
 
 ### Available Operations
 
@@ -44,16 +44,18 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                          | :heavy_check_mark:                                                                                             | The context to use for the request.                                                                            |
-| `request`                                                                                                      | [operations.GetGeneralLedgerAccountByIDRequest](../../models/operations/getgeneralledgeraccountbyidrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                              | :heavy_check_mark:                                                                                                 | The context to use for the request.                                                                                |
+| `request`                                                                                                          | [operations.GetGeneralLedgerAccountByIDRequest](../../pkg/models/operations/getgeneralledgeraccountbyidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
 
 
 ### Response
 
-**[*operations.GetGeneralLedgerAccountByIDResponse](../../models/operations/getgeneralledgeraccountbyidresponse.md), error**
-
+**[*operations.GetGeneralLedgerAccountByIDResponse](../../pkg/models/operations/getgeneralledgeraccountbyidresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetGeneralLedgerAccounts
 
@@ -96,16 +98,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
-| `request`                                                                                                | [operations.GetGeneralLedgerAccountsRequest](../../models/operations/getgeneralledgeraccountsrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                        | :heavy_check_mark:                                                                                           | The context to use for the request.                                                                          |
+| `request`                                                                                                    | [operations.GetGeneralLedgerAccountsRequest](../../pkg/models/operations/getgeneralledgeraccountsrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
 
 
 ### Response
 
-**[*operations.GetGeneralLedgerAccountsResponse](../../models/operations/getgeneralledgeraccountsresponse.md), error**
-
+**[*operations.GetGeneralLedgerAccountsResponse](../../pkg/models/operations/getgeneralledgeraccountsresponse.md), error**
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| sdkerrors.ProblemDetails | 400                      | application/json         |
+| sdkerrors.SDKError       | 400-600                  | */*                      |
 
 ## DeleteGeneralLedgerAccountsID
 
@@ -142,16 +147,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                              | :heavy_check_mark:                                                                                                 | The context to use for the request.                                                                                |
-| `request`                                                                                                          | [operations.DeleteGeneralLedgerAccountsIDRequest](../../models/operations/deletegeneralledgeraccountsidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                  | :heavy_check_mark:                                                                                                     | The context to use for the request.                                                                                    |
+| `request`                                                                                                              | [operations.DeleteGeneralLedgerAccountsIDRequest](../../pkg/models/operations/deletegeneralledgeraccountsidrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
 
 
 ### Response
 
-**[*operations.DeleteGeneralLedgerAccountsIDResponse](../../models/operations/deletegeneralledgeraccountsidresponse.md), error**
-
+**[*operations.DeleteGeneralLedgerAccountsIDResponse](../../pkg/models/operations/deletegeneralledgeraccountsidresponse.md), error**
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| sdkerrors.ProblemDetails | 404,409                  | application/json         |
+| sdkerrors.SDKError       | 400-600                  | */*                      |
 
 ## PatchGeneralLedgerAccountsID
 
@@ -194,16 +202,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                            | :heavy_check_mark:                                                                                               | The context to use for the request.                                                                              |
-| `request`                                                                                                        | [operations.PatchGeneralLedgerAccountsIDRequest](../../models/operations/patchgeneralledgeraccountsidrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                | :heavy_check_mark:                                                                                                   | The context to use for the request.                                                                                  |
+| `request`                                                                                                            | [operations.PatchGeneralLedgerAccountsIDRequest](../../pkg/models/operations/patchgeneralledgeraccountsidrequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
 
 
 ### Response
 
-**[*operations.PatchGeneralLedgerAccountsIDResponse](../../models/operations/patchgeneralledgeraccountsidresponse.md), error**
-
+**[*operations.PatchGeneralLedgerAccountsIDResponse](../../pkg/models/operations/patchgeneralledgeraccountsidresponse.md), error**
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| sdkerrors.ProblemDetails | 400,404                  | application/json         |
+| sdkerrors.SDKError       | 400-600                  | */*                      |
 
 ## PostGeneralLedgerAccounts
 
@@ -248,13 +259,16 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
-| `request`                                                                                | [shared.GeneralLedgerAccountPostDto](../../models/shared/generalledgeraccountpostdto.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `request`                                                                                    | [shared.GeneralLedgerAccountPostDto](../../pkg/models/shared/generalledgeraccountpostdto.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 
 ### Response
 
-**[*operations.PostGeneralLedgerAccountsResponse](../../models/operations/postgeneralledgeraccountsresponse.md), error**
-
+**[*operations.PostGeneralLedgerAccountsResponse](../../pkg/models/operations/postgeneralledgeraccountsresponse.md), error**
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| sdkerrors.ProblemDetails | 400,404                  | application/json         |
+| sdkerrors.SDKError       | 400-600                  | */*                      |

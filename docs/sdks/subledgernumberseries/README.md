@@ -1,5 +1,5 @@
 # SubLedgerNumberSeries
-(*.SubLedgerNumberSeries*)
+(*SubLedgerNumberSeries*)
 
 ### Available Operations
 
@@ -48,16 +48,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
-| `request`                                                                                                | [operations.GetSubLedgerNumberSeriesRequest](../../models/operations/getsubledgernumberseriesrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                        | :heavy_check_mark:                                                                                           | The context to use for the request.                                                                          |
+| `request`                                                                                                    | [operations.GetSubLedgerNumberSeriesRequest](../../pkg/models/operations/getsubledgernumberseriesrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
 
 
 ### Response
 
-**[*operations.GetSubLedgerNumberSeriesResponse](../../models/operations/getsubledgernumberseriesresponse.md), error**
-
+**[*operations.GetSubLedgerNumberSeriesResponse](../../pkg/models/operations/getsubledgernumberseriesresponse.md), error**
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| sdkerrors.ProblemDetails | 400                      | application/json         |
+| sdkerrors.SDKError       | 400-600                  | */*                      |
 
 ## GetSubLedgerNumberSeriesID
 
@@ -94,13 +97,16 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                        | :heavy_check_mark:                                                                                           | The context to use for the request.                                                                          |
-| `request`                                                                                                    | [operations.GetSubLedgerNumberSeriesIDRequest](../../models/operations/getsubledgernumberseriesidrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                            | :heavy_check_mark:                                                                                               | The context to use for the request.                                                                              |
+| `request`                                                                                                        | [operations.GetSubLedgerNumberSeriesIDRequest](../../pkg/models/operations/getsubledgernumberseriesidrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 
 ### Response
 
-**[*operations.GetSubLedgerNumberSeriesIDResponse](../../models/operations/getsubledgernumberseriesidresponse.md), error**
-
+**[*operations.GetSubLedgerNumberSeriesIDResponse](../../pkg/models/operations/getsubledgernumberseriesidresponse.md), error**
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| sdkerrors.ProblemDetails | 404                      | application/json         |
+| sdkerrors.SDKError       | 400-600                  | */*                      |

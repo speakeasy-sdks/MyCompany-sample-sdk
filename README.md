@@ -55,15 +55,15 @@ func main() {
 ## Available Resources and Operations
 
 
-### [.Currencies](docs/sdks/currencies/README.md)
+### [Currencies](docs/sdks/currencies/README.md)
 
 * [GetCurrencies](docs/sdks/currencies/README.md#getcurrencies) - Gets the currencies set on the client. (Auth roles: CommonServices,CommonServices_Full)
 
-### [.FinancialSettings](docs/sdks/financialsettings/README.md)
+### [FinancialSettings](docs/sdks/financialsettings/README.md)
 
 * [GetFinancialSettings](docs/sdks/financialsettings/README.md#getfinancialsettings) - Gets the financial settings on the client, and conversion date. (Auth roles: CommonServices,CommonServices_Full)
 
-### [.GeneralLedgerAccounts](docs/sdks/generalledgeraccounts/README.md)
+### [GeneralLedgerAccounts](docs/sdks/generalledgeraccounts/README.md)
 
 * [GetGeneralLedgerAccountByID](docs/sdks/generalledgeraccounts/README.md#getgeneralledgeraccountbyid) - Get a GeneralLedgerAccount by ID (Auth roles: GeneralLedgerAccount,GeneralLedgerAccount_Full)
 * [GetGeneralLedgerAccounts](docs/sdks/generalledgeraccounts/README.md#getgeneralledgeraccounts) - Get a list of general ledger accounts. (Auth roles: GeneralLedgerAccount,GeneralLedgerAccount_Full)
@@ -71,20 +71,20 @@ func main() {
 * [PatchGeneralLedgerAccountsID](docs/sdks/generalledgeraccounts/README.md#patchgeneralledgeraccountsid) - Update an existing general ledger account. (Auth roles: GeneralLedgerAccount_Full)
 * [PostGeneralLedgerAccounts](docs/sdks/generalledgeraccounts/README.md#postgeneralledgeraccounts) - Create a new general ledger account with setting. (Auth roles: GeneralLedgerAccount_Full)
 
-### [.LockDateSettings](docs/sdks/lockdatesettings/README.md)
+### [LockDateSettings](docs/sdks/lockdatesettings/README.md)
 
 * [GetLockDate](docs/sdks/lockdatesettings/README.md#getlockdate) - Gets the lock date on the client. (Auth roles: CommonServices,CommonServices_Full)
 
-### [.SubLedgerNumberSeries](docs/sdks/subledgernumberseries/README.md)
+### [SubLedgerNumberSeries](docs/sdks/subledgernumberseries/README.md)
 
 * [GetSubLedgerNumberSeries](docs/sdks/subledgernumberseries/README.md#getsubledgernumberseries) - Gets the sub-ledger number series set on the client (Auth roles: CommonServices,CommonServices_Full)
 * [GetSubLedgerNumberSeriesID](docs/sdks/subledgernumberseries/README.md#getsubledgernumberseriesid) - Get a SubLedgerNumberSeries by ID. (Auth roles: CommonServices,CommonServices_Full)
 
-### [.VatCodes](docs/sdks/vatcodes/README.md)
+### [VatCodes](docs/sdks/vatcodes/README.md)
 
 * [GetVatCodes](docs/sdks/vatcodes/README.md#getvatcodes) - Gets the vat codes on the client. (Auth roles: CommonServices,CommonServices_Full)
 
-### [.VatSettings](docs/sdks/vatsettings/README.md)
+### [VatSettings](docs/sdks/vatsettings/README.md)
 
 * [GetVatSettings](docs/sdks/vatsettings/README.md#getvatsettings) - Gets the vat settings on the client. (Auth roles: CommonServices,CommonServices_Full)
 <!-- End SDK Available Operations -->
@@ -124,7 +124,12 @@ d6 := types.MustDateFromString("2019-01-01") // returns types.Date and panics on
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| sdkerrors.ProblemDetails | 400                      | application/json         |
+| sdkerrors.SDKError       | 400-600                  | */*                      |
 
 
 ## Example
@@ -160,6 +165,11 @@ func main() {
 			log.Fatal(e.Error())
 		}
 
+		var e *sdkerrors.SDKError
+		if errors.As(err, &e) {
+			// handle error
+			log.Fatal(e.Error())
+		}
 	}
 }
 

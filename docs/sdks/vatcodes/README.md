@@ -1,5 +1,5 @@
 # VatCodes
-(*.VatCodes*)
+(*VatCodes*)
 
 ### Available Operations
 
@@ -48,13 +48,16 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
-| `request`                                                                      | [operations.GetVatCodesRequest](../../models/operations/getvatcodesrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
+| `request`                                                                          | [operations.GetVatCodesRequest](../../pkg/models/operations/getvatcodesrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
 
-**[*operations.GetVatCodesResponse](../../models/operations/getvatcodesresponse.md), error**
-
+**[*operations.GetVatCodesResponse](../../pkg/models/operations/getvatcodesresponse.md), error**
+| Error Object             | Status Code              | Content Type             |
+| ------------------------ | ------------------------ | ------------------------ |
+| sdkerrors.ProblemDetails | 400                      | application/json         |
+| sdkerrors.SDKError       | 400-600                  | */*                      |

@@ -1,5 +1,5 @@
 # FinancialSettings
-(*.FinancialSettings*)
+(*FinancialSettings*)
 
 ### Available Operations
 
@@ -44,5 +44,7 @@ func main() {
 
 ### Response
 
-**[*operations.GetFinancialSettingsResponse](../../models/operations/getfinancialsettingsresponse.md), error**
-
+**[*operations.GetFinancialSettingsResponse](../../pkg/models/operations/getfinancialsettingsresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
