@@ -17,11 +17,11 @@ Compensation codes has a prefix with the letter 'K'.
 package main
 
 import(
-	"context"
-	"log"
 	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
-	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
+	"context"
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/shared"
+	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
+	"log"
 )
 
 func main() {

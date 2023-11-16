@@ -19,10 +19,10 @@ Get a GeneralLedgerAccount by ID (Auth roles: GeneralLedgerAccount,GeneralLedger
 package main
 
 import(
-	"context"
-	"log"
 	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
+	"context"
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -67,11 +67,11 @@ Get a list of general ledger accounts. (Auth roles: GeneralLedgerAccount,General
 package main
 
 import(
-	"context"
-	"log"
 	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
-	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
+	"context"
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/shared"
+	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -122,10 +122,11 @@ Deletes a General Ledger Account with a given id. (Auth roles: GeneralLedgerAcco
 package main
 
 import(
-	"context"
-	"log"
 	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
+	"context"
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
@@ -171,11 +172,11 @@ Update an existing general ledger account. (Auth roles: GeneralLedgerAccount_Ful
 package main
 
 import(
-	"context"
-	"log"
 	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
-	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
+	"context"
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/shared"
+	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -226,10 +227,10 @@ Create a new general ledger account with setting. (Auth roles: GeneralLedgerAcco
 package main
 
 import(
-	"context"
-	"log"
 	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
+	"context"
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/shared"
+	"log"
 )
 
 func main() {

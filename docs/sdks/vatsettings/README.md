@@ -15,9 +15,9 @@ Gets the vat settings on the client. (Auth roles: CommonServices,CommonServices_
 package main
 
 import(
+	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
 	"context"
 	"log"
-	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
 )
 
 func main() {

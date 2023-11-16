@@ -17,11 +17,11 @@ for entries related to either customers, suppliers or employees.
 package main
 
 import(
-	"context"
-	"log"
 	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
-	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
+	"context"
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/shared"
+	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -72,10 +72,11 @@ Get a SubLedgerNumberSeries by ID. (Auth roles: CommonServices,CommonServices_Fu
 package main
 
 import(
-	"context"
-	"log"
 	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
+	"context"
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {

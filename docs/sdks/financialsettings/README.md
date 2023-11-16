@@ -15,9 +15,9 @@ Changes in agio (gains) and disagio (loss) accounts does not update the LastChan
 package main
 
 import(
+	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
 	"context"
 	"log"
-	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
 )
 
 func main() {
