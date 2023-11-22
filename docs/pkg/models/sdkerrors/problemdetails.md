@@ -1,5 +1,7 @@
 # ProblemDetails
 
+Given when request is badly formatted
+
 
 ## Fields
 

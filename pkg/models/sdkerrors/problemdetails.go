@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 )
 
+// ProblemDetails - Given when request is badly formatted
 type ProblemDetails struct {
 	AdditionalProperties map[string]interface{} `additionalProperties:"true" json:"-"`
 	Detail               *string                `json:"Detail,omitempty"`
