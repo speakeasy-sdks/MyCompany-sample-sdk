@@ -7,17 +7,17 @@ import (
 	"fmt"
 )
 
-// VatReturnSpecification - Vat return specification used for giving extra vat information about the transaction. Will be reported from 2022 in the norwegian vat return.<p>Members:</p><ul><li><i>none</i> - None</li><li><i>adjustment</i> - Adjustments (Norwegian: Justering)</li><li><i>lossesOnClaims</i> - Losses on claims (Norwegian: Tap på krav)</li><li><i>reversalOfInputValueAddedTax</i> - Reversal of input value added tax (VAT) (Norwegian: Tilbakeføring av inngående merverdiavgift)</li><li><i>withdrawals</i> - Withdrawals (Norwegian: Uttak)</li><li><i>adjustmentVatCompensationRealProperty</i> - Adjustment of value added tax (VAT) compensation for real estate (Norwegian: Justering av merverdiavgiftskompensasjon for fast eiendom)</li><li><i>purchasesEligibleForCompensation</i> - Purchases eligible for compensation (Norwegian: Kjøp med kompensasjonsrett)</li></ul>
+// VatReturnSpecification - Vat return specification used for giving extra vat information about the transaction. Will be reported from 2022 in the norwegian vat return.<p>Members:</p><ul><li><i>None</i> - None</li><li><i>Adjustment</i> - Adjustments (Norwegian: Justering)</li><li><i>LossesOnClaims</i> - Losses on claims (Norwegian: Tap på krav)</li><li><i>ReversalOfInputValueAddedTax</i> - Reversal of input value added tax (VAT) (Norwegian: Tilbakeføring av inngående merverdiavgift)</li><li><i>Withdrawals</i> - Withdrawals (Norwegian: Uttak)</li><li><i>AdjustmentVatCompensationRealProperty</i> - Adjustment of value added tax (VAT) compensation for real estate (Norwegian: Justering av merverdiavgiftskompensasjon for fast eiendom)</li><li><i>PurchasesEligibleForCompensation</i> - Purchases eligible for compensation (Norwegian: Kjøp med kompensasjonsrett)</li></ul>
 type VatReturnSpecification string
 
 const (
-	VatReturnSpecificationNone                                  VatReturnSpecification = "none"
-	VatReturnSpecificationAdjustment                            VatReturnSpecification = "adjustment"
-	VatReturnSpecificationLossesOnClaims                        VatReturnSpecification = "lossesOnClaims"
-	VatReturnSpecificationReversalOfInputValueAddedTax          VatReturnSpecification = "reversalOfInputValueAddedTax"
-	VatReturnSpecificationWithdrawals                           VatReturnSpecification = "withdrawals"
-	VatReturnSpecificationAdjustmentVatCompensationRealProperty VatReturnSpecification = "adjustmentVatCompensationRealProperty"
-	VatReturnSpecificationPurchasesEligibleForCompensation      VatReturnSpecification = "purchasesEligibleForCompensation"
+	VatReturnSpecificationNone                                  VatReturnSpecification = "None"
+	VatReturnSpecificationAdjustment                            VatReturnSpecification = "Adjustment"
+	VatReturnSpecificationLossesOnClaims                        VatReturnSpecification = "LossesOnClaims"
+	VatReturnSpecificationReversalOfInputValueAddedTax          VatReturnSpecification = "ReversalOfInputValueAddedTax"
+	VatReturnSpecificationWithdrawals                           VatReturnSpecification = "Withdrawals"
+	VatReturnSpecificationAdjustmentVatCompensationRealProperty VatReturnSpecification = "AdjustmentVatCompensationRealProperty"
+	VatReturnSpecificationPurchasesEligibleForCompensation      VatReturnSpecification = "PurchasesEligibleForCompensation"
 )
 
 func (e VatReturnSpecification) ToPointer() *VatReturnSpecification {
@@ -30,19 +30,19 @@ func (e *VatReturnSpecification) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	switch v {
-	case "none":
+	case "None":
 		fallthrough
-	case "adjustment":
+	case "Adjustment":
 		fallthrough
-	case "lossesOnClaims":
+	case "LossesOnClaims":
 		fallthrough
-	case "reversalOfInputValueAddedTax":
+	case "ReversalOfInputValueAddedTax":
 		fallthrough
-	case "withdrawals":
+	case "Withdrawals":
 		fallthrough
-	case "adjustmentVatCompensationRealProperty":
+	case "AdjustmentVatCompensationRealProperty":
 		fallthrough
-	case "purchasesEligibleForCompensation":
+	case "PurchasesEligibleForCompensation":
 		*e = VatReturnSpecification(v)
 		return nil
 	default:

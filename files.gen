@@ -54,7 +54,6 @@ pkg/utils/utils.go
 /pkg/models/shared/vatreturntype.go
 /pkg/models/shared/vatperiodtype.go
 /pkg/models/sdkerrors/problemdetails.go
-USAGE.md
 docs/pkg/models/operations/getcurrenciesrequest.md
 docs/pkg/models/operations/getcurrenciesresponse.md
 docs/pkg/models/operations/getfinancialsettingsresponse.md
@@ -102,4 +101,5 @@ docs/sdks/lockdatesettings/README.md
 docs/sdks/subledgernumberseries/README.md
 docs/sdks/vatcodes/README.md
 docs/sdks/vatsettings/README.md
+USAGE.md
 .gitattributes

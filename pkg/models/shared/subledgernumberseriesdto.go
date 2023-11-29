@@ -21,7 +21,7 @@ type SubLedgerNumberSeriesDto struct {
 	IsDefault *bool `json:"IsDefault,omitempty"`
 	// Gets the name of the subledger number series.
 	Name *string `json:"Name,omitempty"`
-	// Enum SubLedgerNumberSeriesType indicating what kind of sub ledger accounts are represented in the number series.<p>Members:</p><ul><li><i>customer</i> - The sub ledger number series contains Customer</li><li><i>supplier</i> - The sub ledger number series contains Supplier</li><li><i>employee</i> - The sub ledger number series contains Employee</li></ul>
+	// Enum SubLedgerNumberSeriesType indicating what kind of sub ledger accounts are represented in the number series.<p>Members:</p><ul><li><i>Customer</i> - The sub ledger number series contains Customer</li><li><i>Supplier</i> - The sub ledger number series contains Supplier</li><li><i>Employee</i> - The sub ledger number series contains Employee</li></ul>
 	SubLedgerNumberSeriesType *SubLedgerNumberSeriesType `json:"SubLedgerNumberSeriesType,omitempty"`
 	// The maximum number the subledger accounts in this series can have.
 	ToInclusive *int64 `json:"ToInclusive,omitempty"`

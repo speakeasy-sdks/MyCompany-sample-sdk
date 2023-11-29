@@ -7,15 +7,15 @@ import (
 	"fmt"
 )
 
-// VatReturnType - The type of VAT returns the client should deliver for it's principal activity.<p>Members:</p><ul><li><i>generalIndustry</i> - General Industry (Norwegian: Alminnelig næring)</li><li><i>primaryIndustry</i> - Primary Industry (Norwegian: Primærnmæring)</li><li><i>vatCompensation</i> - Vat Compensation (Norwegian: Merverdiavgiftskompensasjon)ø</li><li><i>reverseVatLiability</i> - Reverse VAT Liability (Norwegian: Omvendt avgiftsplikt)</li><li><i>noReporting</i> - No reporting (Norwegian: Ingen rapportering)</li></ul>
+// VatReturnType - The type of VAT returns the client should deliver for it's principal activity.<p>Members:</p><ul><li><i>GeneralIndustry</i> - General Industry (Norwegian: Alminnelig næring)</li><li><i>PrimaryIndustry</i> - Primary Industry (Norwegian: Primærnmæring)</li><li><i>VatCompensation</i> - Vat Compensation (Norwegian: Merverdiavgiftskompensasjon)ø</li><li><i>ReverseVatLiability</i> - Reverse VAT Liability (Norwegian: Omvendt avgiftsplikt)</li><li><i>NoReporting</i> - No reporting (Norwegian: Ingen rapportering)</li></ul>
 type VatReturnType string
 
 const (
-	VatReturnTypeGeneralIndustry     VatReturnType = "generalIndustry"
-	VatReturnTypePrimaryIndustry     VatReturnType = "primaryIndustry"
-	VatReturnTypeVatCompensation     VatReturnType = "vatCompensation"
-	VatReturnTypeReverseVatLiability VatReturnType = "reverseVatLiability"
-	VatReturnTypeNoReporting         VatReturnType = "noReporting"
+	VatReturnTypeGeneralIndustry     VatReturnType = "GeneralIndustry"
+	VatReturnTypePrimaryIndustry     VatReturnType = "PrimaryIndustry"
+	VatReturnTypeVatCompensation     VatReturnType = "VatCompensation"
+	VatReturnTypeReverseVatLiability VatReturnType = "ReverseVatLiability"
+	VatReturnTypeNoReporting         VatReturnType = "NoReporting"
 )
 
 func (e VatReturnType) ToPointer() *VatReturnType {
@@ -28,15 +28,15 @@ func (e *VatReturnType) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	switch v {
-	case "generalIndustry":
+	case "GeneralIndustry":
 		fallthrough
-	case "primaryIndustry":
+	case "PrimaryIndustry":
 		fallthrough
-	case "vatCompensation":
+	case "VatCompensation":
 		fallthrough
-	case "reverseVatLiability":
+	case "ReverseVatLiability":
 		fallthrough
-	case "noReporting":
+	case "NoReporting":
 		*e = VatReturnType(v)
 		return nil
 	default:

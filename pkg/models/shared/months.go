@@ -7,22 +7,22 @@ import (
 	"fmt"
 )
 
-// Months - Enum defining the months of a year.<p>Members:</p><ul><li><i>january</i> - January</li><li><i>february</i> - February</li><li><i>march</i> - March</li><li><i>april</i> - April</li><li><i>may</i> - May</li><li><i>june</i> - June</li><li><i>july</i> - July</li><li><i>august</i> - August</li><li><i>september</i> - September</li><li><i>october</i> - October</li><li><i>november</i> - November</li><li><i>december</i> - December</li></ul>
+// Months - Enum defining the months of a year.<p>Members:</p><ul><li><i>January</i> - January</li><li><i>February</i> - February</li><li><i>March</i> - March</li><li><i>April</i> - April</li><li><i>May</i> - May</li><li><i>June</i> - June</li><li><i>July</i> - July</li><li><i>August</i> - August</li><li><i>September</i> - September</li><li><i>October</i> - October</li><li><i>November</i> - November</li><li><i>December</i> - December</li></ul>
 type Months string
 
 const (
-	MonthsJanuary   Months = "january"
-	MonthsFebruary  Months = "february"
-	MonthsMarch     Months = "march"
-	MonthsApril     Months = "april"
-	MonthsMay       Months = "may"
-	MonthsJune      Months = "june"
-	MonthsJuly      Months = "july"
-	MonthsAugust    Months = "august"
-	MonthsSeptember Months = "september"
-	MonthsOctober   Months = "october"
-	MonthsNovember  Months = "november"
-	MonthsDecember  Months = "december"
+	MonthsJanuary   Months = "January"
+	MonthsFebruary  Months = "February"
+	MonthsMarch     Months = "March"
+	MonthsApril     Months = "April"
+	MonthsMay       Months = "May"
+	MonthsJune      Months = "June"
+	MonthsJuly      Months = "July"
+	MonthsAugust    Months = "August"
+	MonthsSeptember Months = "September"
+	MonthsOctober   Months = "October"
+	MonthsNovember  Months = "November"
+	MonthsDecember  Months = "December"
 )
 
 func (e Months) ToPointer() *Months {
@@ -35,29 +35,29 @@ func (e *Months) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	switch v {
-	case "january":
+	case "January":
 		fallthrough
-	case "february":
+	case "February":
 		fallthrough
-	case "march":
+	case "March":
 		fallthrough
-	case "april":
+	case "April":
 		fallthrough
-	case "may":
+	case "May":
 		fallthrough
-	case "june":
+	case "June":
 		fallthrough
-	case "july":
+	case "July":
 		fallthrough
-	case "august":
+	case "August":
 		fallthrough
-	case "september":
+	case "September":
 		fallthrough
-	case "october":
+	case "October":
 		fallthrough
-	case "november":
+	case "November":
 		fallthrough
-	case "december":
+	case "December":
 		*e = Months(v)
 		return nil
 	default:

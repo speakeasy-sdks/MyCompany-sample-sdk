@@ -1,16 +1,16 @@
 # VatPeriodType
 
-Enum defining the Value Added Tax (VAT) period on this client. The VAT period states how often VAT is reported to the government from this client.<p>Members:</p><ul><li><i>weekly</i> - Every week</li><li><i>halfMonthly</i> - Half-Monthly</li><li><i>monthly</i> - Every month</li><li><i>biMonthly</i> - Every two months</li><li><i>yearly</i> - Once a year</li><li><i>halfYearly</i> - Twice a year</li><li><i>quarterly</i> - Four times a year</li></ul>
+Enum defining the Value Added Tax (VAT) period on this client. The VAT period states how often VAT is reported to the government from this client.<p>Members:</p><ul><li><i>Weekly</i> - Every week</li><li><i>HalfMonthly</i> - Half-Monthly</li><li><i>Monthly</i> - Every month</li><li><i>BiMonthly</i> - Every two months</li><li><i>Yearly</i> - Once a year</li><li><i>HalfYearly</i> - Twice a year</li><li><i>Quarterly</i> - Four times a year</li></ul>
 
 
 ## Values
 
 | Name                       | Value                      |
 | -------------------------- | -------------------------- |
-| `VatPeriodTypeWeekly`      | weekly                     |
-| `VatPeriodTypeHalfMonthly` | halfMonthly                |
-| `VatPeriodTypeMonthly`     | monthly                    |
-| `VatPeriodTypeBiMonthly`   | biMonthly                  |
-| `VatPeriodTypeYearly`      | yearly                     |
-| `VatPeriodTypeHalfYearly`  | halfYearly                 |
-| `VatPeriodTypeQuarterly`   | quarterly                  |
+| `VatPeriodTypeWeekly`      | Weekly                     |
+| `VatPeriodTypeHalfMonthly` | HalfMonthly                |
+| `VatPeriodTypeMonthly`     | Monthly                    |
+| `VatPeriodTypeBiMonthly`   | BiMonthly                  |
+| `VatPeriodTypeYearly`      | Yearly                     |
+| `VatPeriodTypeHalfYearly`  | HalfYearly                 |
+| `VatPeriodTypeQuarterly`   | Quarterly                  |

@@ -7,17 +7,17 @@ import (
 	"fmt"
 )
 
-// VatPeriodType - Enum defining the Value Added Tax (VAT) period on this client. The VAT period states how often VAT is reported to the government from this client.<p>Members:</p><ul><li><i>weekly</i> - Every week</li><li><i>halfMonthly</i> - Half-Monthly</li><li><i>monthly</i> - Every month</li><li><i>biMonthly</i> - Every two months</li><li><i>yearly</i> - Once a year</li><li><i>halfYearly</i> - Twice a year</li><li><i>quarterly</i> - Four times a year</li></ul>
+// VatPeriodType - Enum defining the Value Added Tax (VAT) period on this client. The VAT period states how often VAT is reported to the government from this client.<p>Members:</p><ul><li><i>Weekly</i> - Every week</li><li><i>HalfMonthly</i> - Half-Monthly</li><li><i>Monthly</i> - Every month</li><li><i>BiMonthly</i> - Every two months</li><li><i>Yearly</i> - Once a year</li><li><i>HalfYearly</i> - Twice a year</li><li><i>Quarterly</i> - Four times a year</li></ul>
 type VatPeriodType string
 
 const (
-	VatPeriodTypeWeekly      VatPeriodType = "weekly"
-	VatPeriodTypeHalfMonthly VatPeriodType = "halfMonthly"
-	VatPeriodTypeMonthly     VatPeriodType = "monthly"
-	VatPeriodTypeBiMonthly   VatPeriodType = "biMonthly"
-	VatPeriodTypeYearly      VatPeriodType = "yearly"
-	VatPeriodTypeHalfYearly  VatPeriodType = "halfYearly"
-	VatPeriodTypeQuarterly   VatPeriodType = "quarterly"
+	VatPeriodTypeWeekly      VatPeriodType = "Weekly"
+	VatPeriodTypeHalfMonthly VatPeriodType = "HalfMonthly"
+	VatPeriodTypeMonthly     VatPeriodType = "Monthly"
+	VatPeriodTypeBiMonthly   VatPeriodType = "BiMonthly"
+	VatPeriodTypeYearly      VatPeriodType = "Yearly"
+	VatPeriodTypeHalfYearly  VatPeriodType = "HalfYearly"
+	VatPeriodTypeQuarterly   VatPeriodType = "Quarterly"
 )
 
 func (e VatPeriodType) ToPointer() *VatPeriodType {
@@ -30,19 +30,19 @@ func (e *VatPeriodType) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	switch v {
-	case "weekly":
+	case "Weekly":
 		fallthrough
-	case "halfMonthly":
+	case "HalfMonthly":
 		fallthrough
-	case "monthly":
+	case "Monthly":
 		fallthrough
-	case "biMonthly":
+	case "BiMonthly":
 		fallthrough
-	case "yearly":
+	case "Yearly":
 		fallthrough
-	case "halfYearly":
+	case "HalfYearly":
 		fallthrough
-	case "quarterly":
+	case "Quarterly":
 		*e = VatPeriodType(v)
 		return nil
 	default:

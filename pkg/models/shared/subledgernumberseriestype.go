@@ -7,13 +7,13 @@ import (
 	"fmt"
 )
 
-// Enum SubLedgerNumberSeriesType indicating what kind of sub ledger accounts are represented in the number series.<p>Members:</p><ul><li><i>customer</i> - The sub ledger number series contains Customer</li><li><i>supplier</i> - The sub ledger number series contains Supplier</li><li><i>employee</i> - The sub ledger number series contains Employee</li></ul>
+// Enum SubLedgerNumberSeriesType indicating what kind of sub ledger accounts are represented in the number series.<p>Members:</p><ul><li><i>Customer</i> - The sub ledger number series contains Customer</li><li><i>Supplier</i> - The sub ledger number series contains Supplier</li><li><i>Employee</i> - The sub ledger number series contains Employee</li></ul>
 type SubLedgerNumberSeriesType string
 
 const (
-	SubLedgerNumberSeriesTypeCustomer SubLedgerNumberSeriesType = "customer"
-	SubLedgerNumberSeriesTypeSupplier SubLedgerNumberSeriesType = "supplier"
-	SubLedgerNumberSeriesTypeEmployee SubLedgerNumberSeriesType = "employee"
+	SubLedgerNumberSeriesTypeCustomer SubLedgerNumberSeriesType = "Customer"
+	SubLedgerNumberSeriesTypeSupplier SubLedgerNumberSeriesType = "Supplier"
+	SubLedgerNumberSeriesTypeEmployee SubLedgerNumberSeriesType = "Employee"
 )
 
 func (e SubLedgerNumberSeriesType) ToPointer() *SubLedgerNumberSeriesType {
@@ -26,11 +26,11 @@ func (e *SubLedgerNumberSeriesType) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	switch v {
-	case "customer":
+	case "Customer":
 		fallthrough
-	case "supplier":
+	case "Supplier":
 		fallthrough
-	case "employee":
+	case "Employee":
 		*e = SubLedgerNumberSeriesType(v)
 		return nil
 	default:
