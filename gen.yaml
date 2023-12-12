@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 8797abdd1d46c280b0c8aa1464b25617
   docVersion: v2
-  speakeasyVersion: 1.124.3
-  generationVersion: 2.207.1
+  speakeasyVersion: 1.126.0
+  generationVersion: 2.213.3
 generation:
   comments: {}
   sdkClassName: Accounting-Settings
@@ -13,11 +13,11 @@ generation:
 features:
   go:
     additionalProperties: 0.1.2
-    core: 3.1.5
+    core: 3.2.0
     globalServerURLs: 2.82.1
     inputOutputModels: 2.82.0
 go:
-  version: 0.4.4
+  version: 0.5.0
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:
