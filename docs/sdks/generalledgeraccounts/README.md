@@ -55,7 +55,7 @@ func main() {
 **[*operations.GetGeneralLedgerAccountByIDResponse](../../pkg/models/operations/getgeneralledgeraccountbyidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetGeneralLedgerAccounts
 
@@ -110,7 +110,7 @@ func main() {
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | sdkerrors.ProblemDetails | 400                      | application/json         |
-| sdkerrors.SDKError       | 400-600                  | */*                      |
+| sdkerrors.SDKError       | 4xx-5xx                  | */*                      |
 
 ## DeleteGeneralLedgerAccountsID
 
@@ -160,7 +160,7 @@ func main() {
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | sdkerrors.ProblemDetails | 404,409                  | application/json         |
-| sdkerrors.SDKError       | 400-600                  | */*                      |
+| sdkerrors.SDKError       | 4xx-5xx                  | */*                      |
 
 ## PatchGeneralLedgerAccountsID
 
@@ -215,7 +215,7 @@ func main() {
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | sdkerrors.ProblemDetails | 400,404                  | application/json         |
-| sdkerrors.SDKError       | 400-600                  | */*                      |
+| sdkerrors.SDKError       | 4xx-5xx                  | */*                      |
 
 ## PostGeneralLedgerAccounts
 
@@ -272,4 +272,4 @@ func main() {
 | Error Object             | Status Code              | Content Type             |
 | ------------------------ | ------------------------ | ------------------------ |
 | sdkerrors.ProblemDetails | 400,404                  | application/json         |
-| sdkerrors.SDKError       | 400-600                  | */*                      |
+| sdkerrors.SDKError       | 4xx-5xx                  | */*                      |

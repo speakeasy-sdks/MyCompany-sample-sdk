@@ -2,22 +2,24 @@ configVersion: 1.0.0
 management:
   docChecksum: 8797abdd1d46c280b0c8aa1464b25617
   docVersion: v2
-  speakeasyVersion: 1.126.0
-  generationVersion: 2.213.3
+  speakeasyVersion: 1.127.0
+  generationVersion: 2.220.0
 generation:
   comments: {}
   sdkClassName: Accounting-Settings
   repoURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
 features:
   go:
     additionalProperties: 0.1.2
-    core: 3.2.0
+    core: 3.2.2
     globalServerURLs: 2.82.1
-    inputOutputModels: 2.82.0
+    inputOutputModels: 2.83.0
 go:
-  version: 0.5.0
+  version: 0.6.0
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:
