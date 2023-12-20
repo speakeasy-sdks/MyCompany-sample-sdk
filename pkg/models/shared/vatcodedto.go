@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+// VatCodeDto - The VAT code DTO contains all properties relevant to VAT codes.
 type VatCodeDto struct {
 	// Gets the standard vat id the custom vat code is based upon. Relevant only for custom vat codes.
 	BaseVatCodeID *int64 `json:"BaseVatCodeId,omitempty"`

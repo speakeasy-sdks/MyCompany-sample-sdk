@@ -2,6 +2,7 @@
 
 package shared
 
+// SubLedgerNumberSeriesDto - The subledger number series DTO contains all properties relevant to subledger number series.
 type SubLedgerNumberSeriesDto struct {
 	// The minimum number the subledger accounts in this series can have
 	FromInclusive *int64 `json:"FromInclusive,omitempty"`

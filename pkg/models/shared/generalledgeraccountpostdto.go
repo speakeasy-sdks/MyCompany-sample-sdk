@@ -10,6 +10,8 @@ type GeneralLedgerAccountPostDto struct {
 	CurrencyCode *string `json:"CurrencyCode,omitempty"`
 	// Gets or sets the code of the department associated with the account.
 	DepartmentCode *string `json:"DepartmentCode,omitempty"`
+	// Gets or sets the id of the department associated with the account.
+	DepartmentID *int64 `json:"DepartmentId,omitempty"`
 	// Gets or sets a value indicating whether this account is active. Accounts that are not active will not be available for users in the journal entry GUI
 	IsActive bool `json:"IsActive"`
 	// Gets or sets a value indicating whether department is a required property to set on transactions on this account
@@ -46,6 +48,13 @@ func (o *GeneralLedgerAccountPostDto) GetDepartmentCode() *string {
 		return nil
 	}
 	return o.DepartmentCode
+}
+
+func (o *GeneralLedgerAccountPostDto) GetDepartmentID() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.DepartmentID
 }
 
 func (o *GeneralLedgerAccountPostDto) GetIsActive() bool {

@@ -1,5 +1,7 @@
 # SubLedgerNumberSeriesDto
 
+The subledger number series DTO contains all properties relevant to subledger number series.
+
 
 ## Fields
 

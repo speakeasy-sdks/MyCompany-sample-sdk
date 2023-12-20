@@ -13,7 +13,7 @@ type GeneralLedgerAccountDto struct {
 	AccountNo int64 `json:"AccountNo"`
 	// Gets or sets the standard code of the currency associated with the account.
 	CurrencyCode *string `json:"CurrencyCode,omitempty"`
-	// Gets or sets the code of the department associated with the account.
+	// Gets the code of the department associated with the account.
 	DepartmentCode *string `json:"DepartmentCode,omitempty"`
 	// Gets the id of the department associated with the account.
 	DepartmentID *int64 `json:"DepartmentId,omitempty"`
@@ -34,7 +34,7 @@ type GeneralLedgerAccountDto struct {
 	// Gets or sets the vat code associated with the account.
 	// Standard codes in Go is based on the SAF-T standard. Codes and any custom codes can be queried and identified using the VatCode service.
 	VatCode string `json:"VatCode"`
-	// Gets the id of the vatCode associated with the account. This property cannot be set, only retreived from GET calls or in the response form POST/PATCH.
+	// Gets the id of the vatCode associated with the account. This property cannot be set, only retrieved from GET calls or in the response form POST/PATCH.
 	VatCodeID *int64 `json:"VatCodeId,omitempty"`
 	// Vat return specification used for giving extra vat information about the transaction. Will be reported from 2022 in the norwegian vat return.<p>Members:</p><ul><li><i>None</i> - None</li><li><i>Adjustment</i> - Adjustments (Norwegian: Justering)</li><li><i>LossesOnClaims</i> - Losses on claims (Norwegian: Tap på krav)</li><li><i>ReversalOfInputValueAddedTax</i> - Reversal of input value added tax (VAT) (Norwegian: Tilbakeføring av inngående merverdiavgift)</li><li><i>Withdrawals</i> - Withdrawals (Norwegian: Uttak)</li><li><i>AdjustmentVatCompensationRealProperty</i> - Adjustment of value added tax (VAT) compensation for real estate (Norwegian: Justering av merverdiavgiftskompensasjon for fast eiendom)</li><li><i>PurchasesEligibleForCompensation</i> - Purchases eligible for compensation (Norwegian: Kjøp med kompensasjonsrett)</li></ul>
 	VatReturnSpecification *VatReturnSpecification `json:"VatReturnSpecification,omitempty"`

@@ -1,5 +1,7 @@
 # VatCodeDto
 
+The VAT code DTO contains all properties relevant to VAT codes.
+
 
 ## Fields
 

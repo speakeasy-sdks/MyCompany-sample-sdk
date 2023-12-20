@@ -7,6 +7,7 @@ import (
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/utils"
 )
 
+// LockDateSettingsDto - Represents the lock date settings of a client.
 type LockDateSettingsDto struct {
 	// Gets the lock date on the client. It's not possible to create accounting entries on this date or any previous date on this client.
 	LockDate *types.Date `json:"LockDate,omitempty"`

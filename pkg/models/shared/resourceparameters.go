@@ -6,7 +6,7 @@ package shared
 type ResourceParameters struct {
 	// Define desired fields that should be returned in Json (All fields by default).
 	Fields *string `queryParam:"name=Fields"`
-	// Define fields to order by, and if it should order asc (default) or desc).
+	// Define fields to order by, and if it should order asc (default) or desc.
 	OrderBy *string `queryParam:"name=OrderBy"`
 	// The desired page to return.
 	PageNumber *int `queryParam:"name=PageNumber"`

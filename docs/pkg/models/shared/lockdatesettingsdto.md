@@ -1,5 +1,7 @@
 # LockDateSettingsDto
 
+Represents the lock date settings of a client.
+
 
 ## Fields
 

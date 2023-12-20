@@ -241,6 +241,7 @@ func main() {
         AccountNo: 3000,
         CurrencyCode: mycompanysamplesdk.String("USD"),
         DepartmentCode: mycompanysamplesdk.String("110"),
+        DepartmentID: mycompanysamplesdk.Int64(123456),
         IsActive: true,
         IsDepartmentRequired: mycompanysamplesdk.Bool(true),
         IsProjectRequired: mycompanysamplesdk.Bool(true),
