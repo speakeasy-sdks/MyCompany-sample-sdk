@@ -1,23 +1,10 @@
-configVersion: 1.0.0
-management:
-  docChecksum: 9cd9f62e1f42cbdd9b213fe734a18bed
-  docVersion: v2
-  speakeasyVersion: 1.128.0
-  generationVersion: 2.221.0
+configVersion: 2.0.0
 generation:
-  comments: {}
   sdkClassName: Accounting-Settings
-  repoURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
-features:
-  go:
-    additionalProperties: 0.1.2
-    core: 3.2.2
-    globalServerURLs: 2.82.1
-    inputOutputModels: 2.83.0
 go:
   version: 0.6.1
   clientServerStatusCodesAsErrors: true
@@ -31,9 +18,6 @@ go:
       shared: pkg/models/shared
       webhooks: pkg/models/webhooks
   inputModelSuffix: input
-  installationURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk
   maxMethodParams: 0
   outputModelSuffix: output
   packageName: github.com/speakeasy-sdks/MyCompany-sample-sdk
-  published: true
-  repoSubDirectory: .
