@@ -4,28 +4,30 @@ package shared
 
 // GeneralLedgerAccountPostDto - The General Ledger Account Post DTO contains only properties relevant to a general ledger account in Go that can be altered directly via POST-method in API.
 type GeneralLedgerAccountPostDto struct {
-	// Gets or sets the account number.
+	// The number of the account.
 	AccountNo int64 `json:"AccountNo"`
-	// Gets or sets the standard code of the currency associated with the account.
+	// The standard code of the currency associated with the account.
 	CurrencyCode *string `json:"CurrencyCode,omitempty"`
-	// Gets or sets the code of the department associated with the account.
+	// The code of the department associated with the account.
 	DepartmentCode *string `json:"DepartmentCode,omitempty"`
-	// Gets or sets the id of the department associated with the account.
+	// The id of the department associated with the account.
 	DepartmentID *int64 `json:"DepartmentId,omitempty"`
-	// Gets or sets a value indicating whether this account is active. Accounts that are not active will not be available for users in the journal entry GUI
+	// Value indicating whether this account is active.
+	// Accounts that are not active will not be available for users in the journal entry GUI.
 	IsActive bool `json:"IsActive"`
-	// Gets or sets a value indicating whether department is a required property to set on transactions on this account
+	// Value indicating whether department is a required property to set on transactions on this account.
 	IsDepartmentRequired *bool `json:"IsDepartmentRequired,omitempty"`
-	// Gets or sets a value indicating whether project is a required property to set on transactions on this account
+	// Value indicating whether project is a required property to set on transactions on this account.
 	IsProjectRequired *bool `json:"IsProjectRequired,omitempty"`
-	// Gets or sets a value indicating whether the account is locked to the set vatcode. If true, only this vat code can be used on transactions on this account
+	// Value indicating whether the account is locked to a VAT code. If true, only VatCode can be used on transactions on this account.
 	IsVatCodeLocked *bool `json:"IsVatCodeLocked,omitempty"`
-	// Gets or sets the name of the account
+	// The name of the account.
 	Name string `json:"Name"`
-	// Gets or sets the vat code associated with the account.
-	// Standard codes in Go is based on the SAF-T standard. Codes and any custom codes can be queried and identified using the VatCode service.
+	// The VAT code associated with the account.
+	// Standard codes in Go is based on the SAF-T standard.
+	// Codes and any custom codes can be queried and identified using the VatCode service.
 	VatCode string `json:"VatCode"`
-	// Vat return specification used for giving extra vat information about the transaction. Will be reported from 2022 in the norwegian vat return.<p>Members:</p><ul><li><i>None</i> - None</li><li><i>Adjustment</i> - Adjustments (Norwegian: Justering)</li><li><i>LossesOnClaims</i> - Losses on claims (Norwegian: Tap på krav)</li><li><i>ReversalOfInputValueAddedTax</i> - Reversal of input value added tax (VAT) (Norwegian: Tilbakeføring av inngående merverdiavgift)</li><li><i>Withdrawals</i> - Withdrawals (Norwegian: Uttak)</li><li><i>AdjustmentVatCompensationRealProperty</i> - Adjustment of value added tax (VAT) compensation for real estate (Norwegian: Justering av merverdiavgiftskompensasjon for fast eiendom)</li><li><i>PurchasesEligibleForCompensation</i> - Purchases eligible for compensation (Norwegian: Kjøp med kompensasjonsrett)</li></ul>
+	// Vat return specification used for giving extra vat information about the transaction. Will be reported from 2022 in the norwegian vat return.<p>Members:</p><ul><li><i>None</i> - None</li><li><i>Adjustment</i> - Adjustments (Norwegian: Justering)</li><li><i>LossesOnClaims</i> - Losses on claims (Norwegian: Tap på krav)</li><li><i>ReversalOfInputValueAddedTax</i> - Reversal of input value added tax (Norwegian: Tilbakeføring av inngående merverdiavgift)</li><li><i>Withdrawals</i> - Withdrawals (Norwegian: Uttak)</li><li><i>AdjustmentVatCompensationRealProperty</i> - Adjustment of value added tax (VAT) compensation for real estate (Norwegian: Justering av merverdiavgiftskompensasjon for fast eiendom)</li><li><i>PurchasesEligibleForCompensation</i> - Purchases eligible for compensation (Norwegian: Kjøp med kompensasjonsrett). This specification can not be used by the API directly when creating vouchers/account transactions, but will appear on account transactions on outgoing vat on purchases on client's eligible for compensation.</li></ul>
 	VatReturnSpecification *VatReturnSpecification `json:"VatReturnSpecification,omitempty"`
 }
 

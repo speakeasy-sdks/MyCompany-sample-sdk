@@ -134,9 +134,9 @@ func New(opts ...SDKOption) *AccountingSettings {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "v2",
-			SDKVersion:        "0.6.2",
+			SDKVersion:        "0.6.3",
 			GenVersion:        "2.234.3",
-			UserAgent:         "speakeasy-sdk/go 0.6.2 2.234.3 v2 github.com/speakeasy-sdks/MyCompany-sample-sdk",
+			UserAgent:         "speakeasy-sdk/go 0.6.3 2.234.3 v2 github.com/speakeasy-sdks/MyCompany-sample-sdk",
 		},
 	}
 	for _, opt := range opts {
