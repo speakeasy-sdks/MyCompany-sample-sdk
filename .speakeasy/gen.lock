@@ -4,7 +4,7 @@ management:
   docChecksum: e5b99722309a9e0a5111469589676b57
   docVersion: v2
   speakeasyVersion: internal
-  generationVersion: 2.234.3
+  generationVersion: 2.237.2
   releaseVersion: 0.6.3
   configChecksum: 05ebad3dc36ac20d0594d36999c4fcca
   repoURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk.git
@@ -28,7 +28,6 @@ generatedFiles:
   - accountingsettings.go
   - go.mod
   - go.sum
-  - tests/helpers.go
   - pkg/models/sdkerrors/sdkerror.go
   - pkg/types/bigint.go
   - pkg/types/date.go
