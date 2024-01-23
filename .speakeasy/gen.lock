@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: e4c221e8-03bd-46db-a8ea-fef6da2f0239
 management:
-  docChecksum: e5b99722309a9e0a5111469589676b57
+  docChecksum: 0244fb014fa5453163ad803ab34973c6
   docVersion: v2
   speakeasyVersion: internal
-  generationVersion: 2.237.2
-  releaseVersion: 0.6.3
-  configChecksum: 05ebad3dc36ac20d0594d36999c4fcca
+  generationVersion: 2.237.3
+  releaseVersion: 0.6.4
+  configChecksum: 8dcc820b265f37265b7f9d29e59faf22
   repoURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk
@@ -62,6 +62,8 @@ generatedFiles:
   - /pkg/models/shared/months.go
   - /pkg/models/shared/generalledgeraccountdto.go
   - /pkg/models/shared/vatreturnspecification.go
+  - /pkg/models/shared/unitofmeasuretype.go
+  - /pkg/models/shared/agriculturedepartment.go
   - /pkg/models/shared/operation.go
   - /pkg/models/shared/generalledgeraccountpostdto.go
   - /pkg/models/shared/lockdatesettingsdto.go
@@ -100,6 +102,8 @@ generatedFiles:
   - docs/pkg/models/shared/months.md
   - docs/pkg/models/shared/generalledgeraccountdto.md
   - docs/pkg/models/shared/vatreturnspecification.md
+  - docs/pkg/models/shared/unitofmeasuretype.md
+  - docs/pkg/models/shared/agriculturedepartment.md
   - docs/pkg/models/shared/value.md
   - docs/pkg/models/shared/operation.md
   - docs/pkg/models/shared/generalledgeraccountpostdto.md
