@@ -247,7 +247,7 @@ func main() {
         IsProjectRequired: mycompanysamplesdk.Bool(true),
         IsVatCodeLocked: mycompanysamplesdk.Bool(true),
         Name: "Kundefordringer",
-        VatCode: "33",
+        VatCode: mycompanysamplesdk.String("33"),
     })
     if err != nil {
         log.Fatal(err)

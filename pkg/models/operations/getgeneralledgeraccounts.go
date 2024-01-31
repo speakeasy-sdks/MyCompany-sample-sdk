@@ -12,6 +12,8 @@ import (
 type GetGeneralLedgerAccountsRequest struct {
 	// Filter by account numbers. Separate by comma [,] to filter on multiple account numbers. A range of numbers can be specified using dash/hyphen [-]. For example "1000-1999, 2500, 3000-" will result in accounts with account numbers from and including 1000 to 1999, 2500, 3000 and all above will be returned. If null or whitespace, the filter is not used.
 	AccountNos *string `queryParam:"style=form,explode=true,name=accountNos"`
+	// Filter by agriculture departments. Separate by comma [,] to filter on multiple agriculture departments.
+	AgricultureDepartments *string `queryParam:"style=form,explode=true,name=agricultureDepartments"`
 	// Filter by last changed timestamp.
 	LastChangedDateTimeOffsetGreaterThan *time.Time `queryParam:"style=form,explode=true,name=lastChangedDateTimeOffsetGreaterThan"`
 	// Structure containing various resource-filter options
@@ -34,6 +36,13 @@ func (o *GetGeneralLedgerAccountsRequest) GetAccountNos() *string {
 		return nil
 	}
 	return o.AccountNos
+}
+
+func (o *GetGeneralLedgerAccountsRequest) GetAgricultureDepartments() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AgricultureDepartments
 }
 
 func (o *GetGeneralLedgerAccountsRequest) GetLastChangedDateTimeOffsetGreaterThan() *time.Time {

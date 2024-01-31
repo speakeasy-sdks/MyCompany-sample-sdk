@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: e4c221e8-03bd-46db-a8ea-fef6da2f0239
 management:
-  docChecksum: 0244fb014fa5453163ad803ab34973c6
+  docChecksum: 8151e9e09e0cc45f03457b271357cf63
   docVersion: v2
   speakeasyVersion: internal
-  generationVersion: 2.237.3
-  releaseVersion: 0.6.4
-  configChecksum: 8dcc820b265f37265b7f9d29e59faf22
+  generationVersion: 2.239.4
+  releaseVersion: 0.6.5
+  configChecksum: c8e2cd15765431ad683c424dc875088b
   repoURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk
