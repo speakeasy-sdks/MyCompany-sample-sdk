@@ -16,7 +16,7 @@ type FinancialSettingsDto struct {
 	CurrencyCode *string `json:"CurrencyCode,omitempty"`
 	// Gets the general ledger account code of the account used for posting currency gains (agio). More information of accounts can be retrieved using the GeneralLedgerAccounts endpoint.
 	CurrencyGainsAccountNo *int64 `json:"CurrencyGainsAccountNo,omitempty"`
-	// Gets the general ledger account code of the accountused for posting currency losses (disagio). More information of accounts can be retrieved using the GeneralLedgerAccounts endpoint.
+	// Gets the general ledger account code of the account used for posting currency losses (disagio). More information of accounts can be retrieved using the GeneralLedgerAccounts endpoint.
 	CurrencyLossAccountNo *int64 `json:"CurrencyLossAccountNo,omitempty"`
 	// Enum defining the months of a year.<p>Members:</p><ul><li><i>January</i> - January</li><li><i>February</i> - February</li><li><i>March</i> - March</li><li><i>April</i> - April</li><li><i>May</i> - May</li><li><i>June</i> - June</li><li><i>July</i> - July</li><li><i>August</i> - August</li><li><i>September</i> - September</li><li><i>October</i> - October</li><li><i>November</i> - November</li><li><i>December</i> - December</li></ul>
 	FinancialYearEndMonth *Months `json:"FinancialYearEndMonth,omitempty"`
