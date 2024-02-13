@@ -4,7 +4,7 @@ management:
   docChecksum: 2dae1d86f3da7126fc7950e08e35210d
   docVersion: v2
   speakeasyVersion: internal
-  generationVersion: 2.250.12
+  generationVersion: 2.253.0
   releaseVersion: 0.8.0
   configChecksum: 37e89b693a6a47fa22ec3834ed937d7e
   repoURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk.git

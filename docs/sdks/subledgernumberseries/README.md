@@ -19,7 +19,6 @@ package main
 import(
 	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
 	"context"
-	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/shared"
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
 	"log"
 )
@@ -28,14 +27,7 @@ func main() {
     s := mycompanysamplesdk.New()
 
     ctx := context.Background()
-    res, err := s.SubLedgerNumberSeries.GetSubLedgerNumberSeries(ctx, operations.GetSubLedgerNumberSeriesRequest{
-        ResourceParameter: &shared.ResourceParameters{
-            Fields: mycompanysamplesdk.String("string"),
-            OrderBy: mycompanysamplesdk.String("string"),
-            PageNumber: mycompanysamplesdk.Int(2),
-            PageSize: mycompanysamplesdk.Int(5000),
-        },
-    })
+    res, err := s.SubLedgerNumberSeries.GetSubLedgerNumberSeries(ctx, operations.GetSubLedgerNumberSeriesRequest{})
     if err != nil {
         log.Fatal(err)
     }

@@ -6,7 +6,6 @@ import (
 	"context"
 	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
-	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/shared"
 	"log"
 )
 
@@ -14,14 +13,7 @@ func main() {
 	s := mycompanysamplesdk.New()
 
 	ctx := context.Background()
-	res, err := s.Currencies.GetCurrencies(ctx, operations.GetCurrenciesRequest{
-		ResourceParameter: &shared.ResourceParameters{
-			Fields:     mycompanysamplesdk.String("string"),
-			OrderBy:    mycompanysamplesdk.String("string"),
-			PageNumber: mycompanysamplesdk.Int(2),
-			PageSize:   mycompanysamplesdk.Int(5000),
-		},
-	})
+	res, err := s.Currencies.GetCurrencies(ctx, operations.GetCurrenciesRequest{})
 	if err != nil {
 		log.Fatal(err)
 	}

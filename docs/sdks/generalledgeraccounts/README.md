@@ -69,7 +69,6 @@ package main
 import(
 	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
 	"context"
-	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/shared"
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
 	"log"
 )
@@ -78,14 +77,7 @@ func main() {
     s := mycompanysamplesdk.New()
 
     ctx := context.Background()
-    res, err := s.GeneralLedgerAccounts.GetGeneralLedgerAccounts(ctx, operations.GetGeneralLedgerAccountsRequest{
-        ResourceParameter: &shared.ResourceParameters{
-            Fields: mycompanysamplesdk.String("string"),
-            OrderBy: mycompanysamplesdk.String("string"),
-            PageNumber: mycompanysamplesdk.Int(2),
-            PageSize: mycompanysamplesdk.Int(5000),
-        },
-    })
+    res, err := s.GeneralLedgerAccounts.GetGeneralLedgerAccounts(ctx, operations.GetGeneralLedgerAccountsRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -174,7 +166,6 @@ package main
 import(
 	mycompanysamplesdk "github.com/speakeasy-sdks/MyCompany-sample-sdk"
 	"context"
-	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/shared"
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
 	"log"
 )
@@ -184,11 +175,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.GeneralLedgerAccounts.PatchGeneralLedgerAccountsID(ctx, operations.PatchGeneralLedgerAccountsIDRequest{
-        RequestBody: []shared.Operation{
-            shared.Operation{
-                Value: &shared.Value{},
-            },
-        },
         ID: 24189,
     })
     if err != nil {
