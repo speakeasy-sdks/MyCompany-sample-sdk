@@ -10,7 +10,7 @@ import (
 // GeneralLedgerAccountDto - The General Ledger Account DTO contains all properties relevant to a GeneralLedgerAccount-object in Go
 type GeneralLedgerAccountDto struct {
 	// The number of the account.
-	AccountNo int64 `json:"AccountNo"`
+	AccountNo *int64 `json:"AccountNo,omitempty"`
 	// Enum representing the different agriculture departments available for agriculture clients.<p>Members:</p><ul><li><i>None</i> - Unspecified</li><li><i>Finance</i> - Financial (Norsk: Finans)</li><li><i>Farming</i> - Farming (Norsk: Jordbruk)</li><li><i>Forestry</i> - Forestry (Norsk: Skogbruk)</li><li><i>FurAnimals</i> - Fur animals (Norsk: Pelsdyr)</li><li><i>OtherIndustries</i> - Other industries (Norsk: Andre næringer)</li><li><i>Private</i> - Private (Norsk: Privat)</li></ul>
 	AgricultureDepartment *AgricultureDepartment `json:"AgricultureDepartment,omitempty"`
 	// The standard code of the currency associated with the account.
@@ -61,9 +61,9 @@ func (g *GeneralLedgerAccountDto) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GeneralLedgerAccountDto) GetAccountNo() int64 {
+func (o *GeneralLedgerAccountDto) GetAccountNo() *int64 {
 	if o == nil {
-		return 0
+		return nil
 	}
 	return o.AccountNo
 }
