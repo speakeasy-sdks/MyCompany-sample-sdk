@@ -219,3 +219,13 @@ Based on:
 - [go v0.8.1] .
 ### Releases
 - [Go v0.8.1] https://github.com/speakeasy-sdks/MyCompany-sample-sdk/releases/tag/v0.8.1 - .
+
+## 2024-02-15 00:29:40
+### Changes
+Based on:
+- OpenAPI Doc v2 
+- Speakeasy CLI 1.180.0 (2.258.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.9.0] .
+### Releases
+- [Go v0.9.0] https://github.com/speakeasy-sdks/MyCompany-sample-sdk/releases/tag/v0.9.0 - .

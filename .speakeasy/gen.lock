@@ -4,9 +4,9 @@ management:
   docChecksum: b256d2efa53d04ded876f2dccc8f70b5
   docVersion: v2
   speakeasyVersion: internal
-  generationVersion: 2.253.0
-  releaseVersion: 0.8.1
-  configChecksum: 0a16565c7a28850c568a63334c85c62a
+  generationVersion: 2.258.0
+  releaseVersion: 0.9.0
+  configChecksum: 15559bbb9b710975321944b1f2b7e845
   repoURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk
@@ -14,7 +14,7 @@ management:
 features:
   go:
     additionalProperties: 0.1.2
-    core: 3.3.2
+    core: 3.4.0
     globalServerURLs: 2.82.1
     inputOutputModels: 2.83.0
 generatedFiles:
@@ -126,3 +126,4 @@ generatedFiles:
   - docs/sdks/vatsettings/README.md
   - USAGE.md
   - .gitattributes
+  - internal/hooks/hooks.go
