@@ -4,9 +4,9 @@ management:
   docChecksum: b256d2efa53d04ded876f2dccc8f70b5
   docVersion: v2
   speakeasyVersion: internal
-  generationVersion: 2.258.0
-  releaseVersion: 0.9.0
-  configChecksum: 15559bbb9b710975321944b1f2b7e845
+  generationVersion: 2.263.3
+  releaseVersion: 0.9.1
+  configChecksum: 6b02f7a29bbbe3c7ca7325b09620fde6
   repoURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk
@@ -14,7 +14,7 @@ management:
 features:
   go:
     additionalProperties: 0.1.2
-    core: 3.4.0
+    core: 3.4.1
     globalServerURLs: 2.82.1
     inputOutputModels: 2.83.0
 generatedFiles:
@@ -27,7 +27,6 @@ generatedFiles:
   - vatsettings.go
   - accountingsettings.go
   - go.mod
-  - go.sum
   - pkg/models/sdkerrors/sdkerror.go
   - pkg/types/bigint.go
   - pkg/types/date.go
