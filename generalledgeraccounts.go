@@ -43,12 +43,12 @@ func (s *GeneralLedgerAccounts) GetGeneralLedgerAccountByID(ctx context.Context,
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.DefaultClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -71,7 +71,6 @@ func (s *GeneralLedgerAccounts) GetGeneralLedgerAccountByID(ctx context.Context,
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetGeneralLedgerAccountByIDResponse{
@@ -135,12 +134,12 @@ func (s *GeneralLedgerAccounts) GetGeneralLedgerAccounts(ctx context.Context, re
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.DefaultClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -163,7 +162,6 @@ func (s *GeneralLedgerAccounts) GetGeneralLedgerAccounts(ctx context.Context, re
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetGeneralLedgerAccountsResponse{
@@ -234,12 +232,12 @@ func (s *GeneralLedgerAccounts) DeleteGeneralLedgerAccountsID(ctx context.Contex
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.DefaultClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -262,7 +260,6 @@ func (s *GeneralLedgerAccounts) DeleteGeneralLedgerAccountsID(ctx context.Contex
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteGeneralLedgerAccountsIDResponse{
@@ -329,12 +326,12 @@ func (s *GeneralLedgerAccounts) PatchGeneralLedgerAccountsID(ctx context.Context
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.DefaultClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -357,7 +354,6 @@ func (s *GeneralLedgerAccounts) PatchGeneralLedgerAccountsID(ctx context.Context
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PatchGeneralLedgerAccountsIDResponse{
@@ -435,12 +431,12 @@ func (s *GeneralLedgerAccounts) PostGeneralLedgerAccounts(ctx context.Context, r
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.DefaultClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -463,7 +459,6 @@ func (s *GeneralLedgerAccounts) PostGeneralLedgerAccounts(ctx context.Context, r
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostGeneralLedgerAccountsResponse{
