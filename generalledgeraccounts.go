@@ -28,7 +28,11 @@ func newGeneralLedgerAccounts(sdkConfig sdkConfiguration) *GeneralLedgerAccounts
 
 // GetGeneralLedgerAccountByID - Get a GeneralLedgerAccount by ID (Auth roles: GeneralLedgerAccount,GeneralLedgerAccount_Full)
 func (s *GeneralLedgerAccounts) GetGeneralLedgerAccountByID(ctx context.Context, request operations.GetGeneralLedgerAccountByIDRequest) (*operations.GetGeneralLedgerAccountByIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "GetGeneralLedgerAccountById"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "GetGeneralLedgerAccountById",
+		SecuritySource: nil,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/GeneralLedgerAccounts/{id}", request, nil)
@@ -43,12 +47,12 @@ func (s *GeneralLedgerAccounts) GetGeneralLedgerAccountByID(ctx context.Context,
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.DefaultClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -58,15 +62,15 @@ func (s *GeneralLedgerAccounts) GetGeneralLedgerAccountByID(ctx context.Context,
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "403", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -115,7 +119,11 @@ func (s *GeneralLedgerAccounts) GetGeneralLedgerAccountByID(ctx context.Context,
 
 // GetGeneralLedgerAccounts - Get a list of general ledger accounts. (Auth roles: GeneralLedgerAccount,GeneralLedgerAccount_Full)
 func (s *GeneralLedgerAccounts) GetGeneralLedgerAccounts(ctx context.Context, request operations.GetGeneralLedgerAccountsRequest) (*operations.GetGeneralLedgerAccountsResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "GetGeneralLedgerAccounts"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "GetGeneralLedgerAccounts",
+		SecuritySource: nil,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/GeneralLedgerAccounts")
@@ -134,12 +142,12 @@ func (s *GeneralLedgerAccounts) GetGeneralLedgerAccounts(ctx context.Context, re
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.DefaultClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -149,15 +157,15 @@ func (s *GeneralLedgerAccounts) GetGeneralLedgerAccounts(ctx context.Context, re
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"400", "401", "403", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -217,7 +225,11 @@ func (s *GeneralLedgerAccounts) GetGeneralLedgerAccounts(ctx context.Context, re
 
 // DeleteGeneralLedgerAccountsID - Deletes a General Ledger Account with a given id. (Auth roles: GeneralLedgerAccount_Full)
 func (s *GeneralLedgerAccounts) DeleteGeneralLedgerAccountsID(ctx context.Context, request operations.DeleteGeneralLedgerAccountsIDRequest) (*operations.DeleteGeneralLedgerAccountsIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "delete_/GeneralLedgerAccounts/{id}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "delete_/GeneralLedgerAccounts/{id}",
+		SecuritySource: nil,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/GeneralLedgerAccounts/{id}", request, nil)
@@ -232,12 +244,12 @@ func (s *GeneralLedgerAccounts) DeleteGeneralLedgerAccountsID(ctx context.Contex
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.DefaultClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -247,15 +259,15 @@ func (s *GeneralLedgerAccounts) DeleteGeneralLedgerAccountsID(ctx context.Contex
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "403", "404", "409", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -305,7 +317,11 @@ func (s *GeneralLedgerAccounts) DeleteGeneralLedgerAccountsID(ctx context.Contex
 
 // PatchGeneralLedgerAccountsID - Update an existing general ledger account. (Auth roles: GeneralLedgerAccount_Full)
 func (s *GeneralLedgerAccounts) PatchGeneralLedgerAccountsID(ctx context.Context, request operations.PatchGeneralLedgerAccountsIDRequest) (*operations.PatchGeneralLedgerAccountsIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "patch_/GeneralLedgerAccounts/{id}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "patch_/GeneralLedgerAccounts/{id}",
+		SecuritySource: nil,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/GeneralLedgerAccounts/{id}", request, nil)
@@ -326,12 +342,12 @@ func (s *GeneralLedgerAccounts) PatchGeneralLedgerAccountsID(ctx context.Context
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.DefaultClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -341,15 +357,15 @@ func (s *GeneralLedgerAccounts) PatchGeneralLedgerAccountsID(ctx context.Context
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"400", "401", "403", "404", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -410,7 +426,11 @@ func (s *GeneralLedgerAccounts) PatchGeneralLedgerAccountsID(ctx context.Context
 
 // PostGeneralLedgerAccounts - Create a new general ledger account with setting. (Auth roles: GeneralLedgerAccount_Full)
 func (s *GeneralLedgerAccounts) PostGeneralLedgerAccounts(ctx context.Context, request *shared.GeneralLedgerAccountPostDto) (*operations.PostGeneralLedgerAccountsResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/GeneralLedgerAccounts"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/GeneralLedgerAccounts",
+		SecuritySource: nil,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/GeneralLedgerAccounts")
@@ -431,12 +451,12 @@ func (s *GeneralLedgerAccounts) PostGeneralLedgerAccounts(ctx context.Context, r
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.DefaultClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -446,15 +466,15 @@ func (s *GeneralLedgerAccounts) PostGeneralLedgerAccounts(ctx context.Context, r
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"400", "401", "403", "404", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
