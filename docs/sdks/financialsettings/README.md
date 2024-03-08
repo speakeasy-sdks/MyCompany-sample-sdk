@@ -28,7 +28,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.FinancialSettingsDto != nil {
         // handle response
     }

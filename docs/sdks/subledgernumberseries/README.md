@@ -31,7 +31,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -68,7 +67,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/MyCompany-sample-sdk/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -81,8 +79,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
