@@ -3,10 +3,10 @@ id: e4c221e8-03bd-46db-a8ea-fef6da2f0239
 management:
   docChecksum: b256d2efa53d04ded876f2dccc8f70b5
   docVersion: v2
-  speakeasyVersion: 1.204.1
-  generationVersion: 2.279.1
-  releaseVersion: 0.10.0
-  configChecksum: 52daa65997af14e018f0868050337a23
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 0.10.1
+  configChecksum: 3aec6049fde29ffd52c84f0fa0220602
   repoURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/MyCompany-sample-sdk
@@ -15,7 +15,7 @@ features:
   go:
     additionalProperties: 0.1.2
     core: 3.4.4
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     inputOutputModels: 2.83.0
     responseFormat: 0.1.0
 generatedFiles:
